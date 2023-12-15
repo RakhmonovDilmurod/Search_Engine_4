@@ -2,7 +2,7 @@
 #include <nlohmann\json.hpp>
 #include <fstream>
 #include <vector>
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include <cstdlib>
 #include <map>
 #include <string>
