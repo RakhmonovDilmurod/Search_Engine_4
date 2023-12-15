@@ -1,15 +1,40 @@
 cmake_minimum_required(VERSION 3.5)
 project(search_engine_4 LANGUAGES CXX)
 
+include(FetchContent)
+FetchContent_Declare(
+googletest
+URL
+https://github.com//google//googletest//archive//609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+)
+include(GoogleTest)
+FetchContent_MakeAvailable(googletest)
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+include(GNUInstallDirs)
+install(TARGETS search_engine_4
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+target_link_libraries(search_engine_4 PRIVATE gtest_main)
+gtest_discover_tests(search_engine_4)
+enable_testing()
+
+
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(JSON_BuildTests OFF CACHE INTERNAL "")
+set(gtest_disable_pthreads on)
 
+
+add_subdirectory(nlohmann_json)
 add_executable(search_engine_4 
-               main.cpp 
+               main.cpp
                README.md 
                config/answers.json 
                config/config.json 
                config/requests.json)
 
 target_include_directories(search_engine_4 PUBLIC config)
+add_executable(search_engine_4 main.cpp)
+target_link_libraries(search_engine_4 PRIVATE nlohmann_json)
