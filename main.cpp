@@ -1,5 +1,5 @@
 #include <iostream>
-#include <nlohmann\json.hpp>
+#include <nlohmann/json.hpp>
 #include <fstream>
 #include <vector>
 #include "gtest/gtest.h"
