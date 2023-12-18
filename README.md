@@ -17,8 +17,19 @@ To build the project, follow these steps:
 3. Run CMake to generate the build files:
    Cmake..
 4. nlohmann_json is folder with functions to work with json files , it was added to project
-5. Build the project using your preferred build tool.
-6. After the build is complete, you can run the search engine.
+5. in main.cpp in ConvertorJSON class,please change path for json files with actual path:
+```
+class ConverterJSON {
+private:
+    const std::string configJsonPath   = "..\\config\\config.json";
+    const std::string requestsJsonPath =  "..\\config\\requests.json";
+    const std::string answersJsonPath  =  "..\\config\\answers.json";
+public:
+    ......
+}
+```
+6. Build the project using your preferred build tool.
+7. After the build is complete, you can run the search engine.
 
 ## Using the Search Engine
 To use the search engine, you need to have a dataset of documents. The search engine supports the following files format: config.json , requests.json , answers.json
