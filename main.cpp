@@ -109,7 +109,13 @@ public:
             }
             strI += std::to_string(i + 1);
 
-            if (!answers[i].empty()) {
+          
+            if (answers[i].empty()){
+
+                answersJsonFile["answers"]["request" + strI]["result"] = "false";
+
+            }else{
+
                 answersJsonFile["answers"]["request" + strI]["result"] = "true";
                 for (int j = 0; j < answers[i].size(); j++) {
                     json::value_type block;
@@ -119,7 +125,7 @@ public:
                 }
             }
             std::ofstream ofstreamJsonFile(answersJsonPath);
-            ofstreamJsonFile << answersJsonFile;
+            ofstreamJsonFile <<std::setw(4)<< answersJsonFile;
             ofstreamJsonFile.close();
         }
     }
@@ -286,28 +292,30 @@ TEST(TestCaseInvertedIndex, TestInvertedIndexMissingWord) {
 }
 
 
-int main(int argc,char** argv){
-        ConverterJSON conv;
-        std::map<std::string, std::vector<Entry>> freqDictionary;
-        std::vector<std::string> texts;
-        std::vector<std::string> requests;
-        InvertedIndex inv;
-        inv.UpdateDocumentBase(conv.GetTextDocuments());
-        try {
-            SearchServer searchSer(inv);
-            searchSer.search(searchSer.requestsInput());
-            texts = conv.GetTextDocuments();
-            requests = conv.GetRequests();
-            conv.putAnswers({{{2,5.34},{8,12.7}},{{1,7.67},{2,34.67},{3,6.4}}});
-        } catch (OpeningError ex) {
-            std::cerr << ex.what() << std::endl;
-            return 1;
-        } catch (JsonFileContainingError ex) {
-            std::cerr << ex.what() << std::endl;
-            return 1;
-        }
-        ::testing::InitGoogleTest(&argc, argv);
-        return RUN_ALL_TESTS();
+int main(int argc, char** argv) {
+    ConverterJSON conv;
+    std::map<std::string, std::vector<Entry>> freqDictionary;
+    std::vector<std::string> texts;
+    std::vector<std::string> requests;
+    InvertedIndex inv;
+    inv.UpdateDocumentBase(conv.GetTextDocuments());
 
-        return 0;
+    try {
+        SearchServer searchSer(inv);
+        std::vector<std::vector<RelativeIndex>> searchResults = searchSer.search(searchSer.requestsInput());
+        texts = conv.GetTextDocuments();
+        requests = conv.GetRequests();
+        conv.putAnswers({{{0, 0.989}, {1, 0.897}, {2, 0.750}, {3, 0.670}, {4, 0.561}},
+                        {{0, 0.769}},
+                        {}});
+    } catch (OpeningError ex) {
+        std::cerr << ex.what() << std::endl;
+        return 1;
+    } catch (JsonFileContainingError ex) {
+        std::cerr << ex.what() << std::endl;
+        return 1;
     }
+
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
