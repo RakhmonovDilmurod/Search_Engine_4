@@ -10,6 +10,7 @@
 #include <sstream>
 #include <unordered_map>
 #include <unordered_set>
+#include "gtest.cpp"
 
 
 using json = nlohmann::json;
@@ -44,9 +45,9 @@ public:
 class ConverterJSON {
 private:
 
-    const std::string configJsonPath   = "..\\config\\config.json";
-    const std::string requestsJsonPath =  "..\\config\\requests.json";
-    const std::string answersJsonPath  =  "..\\config\\answers.json";
+    const std::string configJsonPath   = "../config/config.json";
+    const std::string requestsJsonPath =  "../config/requests.json";
+    const std::string answersJsonPath  =  "../config/answers.json";
     json answersJsonFile;
     json requestsJsonFile;
 
@@ -218,7 +219,6 @@ public:
 private:
     InvertedIndex _index;
 };
-
 
 
 using namespace std;
