@@ -16,16 +16,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(JSON_BuildTests OFF CACHE INTERNAL "")
 set(DOWNLOAD_EXTRACT_TIMESTAMP true)
+set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
+set(MY_SRC_DIR ${CMAKE_SOURCE_DIR}/src)
+add_subdirectory(src)
+add_subdirectory(tests)
 
-add_executable(search_engine_4
-    main.cpp
-    config/answers.json
-    config/config.json
-    config/requests.json
-    README.md
-)
 
-target_include_directories(search_engine_4 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/config)
 include_directories(search_engine_4 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/nlohmann_json/include)
 target_link_libraries(search_engine_4 PRIVATE gtest_main)
 gtest_discover_tests(search_engine_4)
