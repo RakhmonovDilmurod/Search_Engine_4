@@ -16,7 +16,6 @@ set(TestsFiles
 )
 
 add_executable(GtestTests ${TestsFiles} ${SrcFiles})
-include_directories(search_engine_4 PUBLIC include )
 target_link_libraries(GtestTests nlohmann_json::nlohmann_json GTest::gtest_main)
 include(GoogleTest)
 target_include_directories(GtestTests PUBLIC ${MY_INCLUDE_DIR})

@@ -9,6 +9,4 @@ set(src
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 add_executable(search_engine_4 ${Src})
-include_directories(search_engine_4 PUBLIC include )
-target_link_libraries(search_engine_4 nlohmann_json::nlohmann_json)
 target_include_directories(search_engine_4 PUBLIC ${MY_INCLUDE_DIR})

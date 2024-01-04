@@ -21,8 +21,8 @@ set(MY_SRC_DIR ${CMAKE_SOURCE_DIR}/src)
 add_subdirectory(src)
 add_subdirectory(tests)
 
-
 include_directories(search_engine_4 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/nlohmann_json/include)
+cmake_policy(SET CMP0079 NEW)
 target_link_libraries(search_engine_4 PRIVATE gtest_main)
 gtest_discover_tests(search_engine_4)
 enable_testing()
