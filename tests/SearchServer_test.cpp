@@ -2,5 +2,4 @@
 #include "gtest/gtest.h"
 
 TEST(SearchServer, search) {
-
 }
