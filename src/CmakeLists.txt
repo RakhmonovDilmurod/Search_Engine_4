@@ -10,3 +10,4 @@ set(src
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 add_executable(search_engine_4 ${Src})
 target_include_directories(search_engine_4 PUBLIC ${MY_INCLUDE_DIR})
+target_link_libraries(search_engine_4 PRIVATE GTest::gtest GTest::gtest_main)
