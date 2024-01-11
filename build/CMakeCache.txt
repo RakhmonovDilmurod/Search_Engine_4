@@ -29,8 +29,8 @@ CMAKE_BUILD_TYPE:STRING=Debug
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:FILEPATH=C:/mingw64/bin/g++.exe
+//CXX compiler
+CMAKE_CXX_COMPILER:STRING=C:/mingw64/bin/g++.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -58,8 +58,8 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:FILEPATH=C:/mingw64/bin/gcc.exe
+//C compiler
+CMAKE_C_COMPILER:STRING=C:/mingw64/bin/gcc.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -324,6 +324,36 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 
+//Path to a library.
+GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
+
+//Path to a library.
+GMOCK_LIBRARY_DEBUG:FILEPATH=GMOCK_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GMOCK_MAIN_LIBRARY:FILEPATH=GMOCK_MAIN_LIBRARY-NOTFOUND
+
+//Path to a library.
+GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a file.
+GTEST_INCLUDE_DIR:PATH=GTEST_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY:FILEPATH=GTEST_MAIN_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
+
+//The directory containing a CMake configuration file for GTest.
+GTest_DIR:PATH=GTest_DIR-NOTFOUND
+
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
@@ -529,7 +559,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -585,6 +615,24 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[C:/Program Files (x86)/Microsoft Visual Studio/Shared/Python39_64/python.exe][cfound components: Interpreter ][v3.9.13()]
+//ADVANCED property for variable: GMOCK_LIBRARY
+GMOCK_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_LIBRARY_DEBUG
+GMOCK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_MAIN_LIBRARY
+GMOCK_MAIN_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_MAIN_LIBRARY_DEBUG
+GMOCK_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_INCLUDE_DIR
+GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY
+GTEST_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
+GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY
+GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
+GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 JSON_BuildTests:INTERNAL=OFF
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
@@ -599,8 +647,6 @@ _Python_EXECUTABLE:INTERNAL=C:/Program Files (x86)/Microsoft Visual Studio/Share
 //Python Properties
 _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;13;64;;cp39-win_amd64;;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\Lib;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\Lib;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\Lib\site-packages;C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python39_64\Lib\site-packages
 _Python_INTERPRETER_SIGNATURE:INTERNAL=cc537b96ee0a2a21b0ae2f6c545afc50
-//Interpreter reason failure
-_Python_Interpreter_REASON_FAILURE:INTERNAL=
 //NumPy reason failure
 _Python_NumPy_REASON_FAILURE:INTERNAL=
 generated_dir:INTERNAL=C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googletest/generated

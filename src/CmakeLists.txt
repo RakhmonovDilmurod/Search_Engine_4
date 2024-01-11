@@ -1,6 +1,8 @@
 cmake_minimum_required (VERSION 3.5)
 
-set(src
+find_package(GTest REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
+set(Src
 	"ConverterJSON.cpp"
 	"SearchServer.cpp"
 	"InvertedIndex.cpp"
