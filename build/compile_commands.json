@@ -1,0 +1,86 @@
+[
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googlemock",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock.dir/includes_CXX.rsp -g -std=c++20 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock.dir\\src\\gmock-all.cc.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\build\\_deps\\googletest-src\\googlemock\\src\\gmock-all.cc",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googlemock",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/gmock_main.dir/includes_CXX.rsp -g -std=c++20 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gmock_main.dir\\src\\gmock_main.cc.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\build\\_deps\\googletest-src\\googlemock\\src\\gmock_main.cc",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googletest",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest.dir/includes_CXX.rsp -g -std=c++20 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest.dir\\src\\gtest-all.cc.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\build\\_deps\\googletest-src\\googletest\\src\\gtest-all.cc",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googletest",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/gtest_main.dir/includes_CXX.rsp -g -std=c++20 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles\\gtest_main.dir\\src\\gtest_main.cc.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\build\\_deps\\googletest-src\\googletest\\src\\gtest_main.cc",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SearchServer.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SearchServer.dir\\ConverterJSON.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\ConverterJSON.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/ConverterJSON.cpp",
+  "output": "Src/CMakeFiles/SearchServer.dir/ConverterJSON.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SearchServer.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SearchServer.dir\\SearchServer.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\SearchServer.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/SearchServer.cpp",
+  "output": "Src/CMakeFiles/SearchServer.dir/SearchServer.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SearchServer.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SearchServer.dir\\InvertedIndex.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\InvertedIndex.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/InvertedIndex.cpp",
+  "output": "Src/CMakeFiles/SearchServer.dir/InvertedIndex.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Src",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/SearchServer.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\SearchServer.dir\\main.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\main.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/main.cpp",
+  "output": "Src/CMakeFiles/SearchServer.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Tests",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/GtestTests.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\GtestTests.dir\\InvertedIndex_test.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Tests\\InvertedIndex_test.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Tests/InvertedIndex_test.cpp",
+  "output": "Tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Tests",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/GtestTests.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\GtestTests.dir\\SearchServer_test.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Tests\\SearchServer_test.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Tests/SearchServer_test.cpp",
+  "output": "Tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Tests",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/GtestTests.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\GtestTests.dir\\ConverterJSON_test.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Tests\\ConverterJSON_test.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Tests/ConverterJSON_test.cpp",
+  "output": "Tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Tests",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/GtestTests.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\GtestTests.dir\\__\\Src\\InvertedIndex.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\InvertedIndex.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/InvertedIndex.cpp",
+  "output": "Tests/CMakeFiles/GtestTests.dir/__/Src/InvertedIndex.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Tests",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/GtestTests.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\GtestTests.dir\\__\\Src\\SearchServer.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\SearchServer.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/SearchServer.cpp",
+  "output": "Tests/CMakeFiles/GtestTests.dir/__/Src/SearchServer.cpp.obj"
+},
+{
+  "directory": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/Tests",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/GtestTests.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles\\GtestTests.dir\\__\\Src\\ConverterJSON.cpp.obj -c C:\\Users\\HP\\OneDrive\\Documents\\GitHub\\Search_Engine_4\\Src\\ConverterJSON.cpp",
+  "file": "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/ConverterJSON.cpp",
+  "output": "Tests/CMakeFiles/GtestTests.dir/__/Src/ConverterJSON.cpp.obj"
+}
+]

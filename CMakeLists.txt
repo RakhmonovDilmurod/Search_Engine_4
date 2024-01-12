@@ -1,33 +1,30 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required (VERSION 3.8)
+project("Search_Engine_4")
 
-project(search_engine_4 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} "-static")
+
+set(MY_INCLUDE_DIR
+  ${CMAKE_SOURCE_DIR}/include
+)
+set(MY_SRC_DIR ${CMAKE_SOURCE_DIR}/Src)
 
 include(FetchContent)
 
 FetchContent_Declare(
-    googletest
-    URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
-
-    )
-include(GoogleTest)
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG release-1.12.1
+)
 FetchContent_MakeAvailable(googletest)
-set(Sources main.cpp)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-set(DOWNLOAD_EXTRACT_TIMESTAMP true)
-set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
-set(MY_SRC_DIR ${CMAKE_SOURCE_DIR}/Src)
+
+FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz)
+FetchContent_MakeAvailable(json)
+
+include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+enable_testing()
+
 add_subdirectory(Src)
 add_subdirectory(Tests)
-
-include_directories(search_engine_4 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/nlohmann_json/include)
-
-
-install(TARGETS search_engine_4
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
-)
-
-install(FILES config/answers.json config/requests.json config/config.json
-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/search_engine_4/config)

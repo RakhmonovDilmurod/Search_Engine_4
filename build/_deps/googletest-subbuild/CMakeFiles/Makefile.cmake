@@ -16,8 +16,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/RepositoryInfo.txt.in"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/cfgcmd.txt.in"
-  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/download.cmake.in"
-  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/extractfile.cmake.in"
+  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/gitclone.cmake.in"
+  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/gitupdate.cmake.in"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/ExternalProject/mkdirs.cmake.in"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/Platform/Windows.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake"
@@ -36,9 +36,9 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.26.0-msvc3/CMakeSystem.cmake"
   "googletest-populate-prefix/tmp/googletest-populate-mkdirs.cmake"
-  "googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake"
-  "googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake"
-  "googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-urlinfo.txt"
+  "googletest-populate-prefix/tmp/googletest-populate-gitclone.cmake"
+  "googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-gitinfo.txt"
+  "googletest-populate-prefix/tmp/googletest-populate-gitupdate.cmake"
   "googletest-populate-prefix/tmp/googletest-populate-cfgcmd.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
