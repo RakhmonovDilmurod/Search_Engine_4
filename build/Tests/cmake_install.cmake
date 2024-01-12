@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Tests
+# Install script for directory: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -23,7 +23,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake"
-  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineRCCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeGenericSystem.cmake"
@@ -34,7 +33,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake"
-  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeRCCompiler.cmake.in"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeRCInformation.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeSystem.cmake.in"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake"
@@ -42,7 +40,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake"
-  "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/CMakeTestRCCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
@@ -121,8 +118,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake"
   "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.26/Modules/WriteBasicConfigVersionFile.cmake"
   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/CMakeLists.txt"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/CMakeLists.txt"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Tests/CMakeLists.txt"
   "CMakeFiles/3.26.0-msvc3/CMakeCCompiler.cmake"
   "CMakeFiles/3.26.0-msvc3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.26.0-msvc3/CMakeRCCompiler.cmake"
@@ -140,6 +135,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/json-src/cmake/config.cmake.in"
   "_deps/json-src/cmake/nlohmann_jsonConfigVersion.cmake.in"
   "_deps/json-src/cmake/pkg-config.pc.in"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/CMakeLists.txt"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/CMakeLists.txt"
   )
 
 # The corresponding makefile is:
@@ -153,7 +150,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/3.26.0-msvc3/CMakeSystem.cmake"
   "CMakeFiles/3.26.0-msvc3/CMakeCCompiler.cmake"
   "CMakeFiles/3.26.0-msvc3/CMakeCXXCompiler.cmake"
-  "CMakeFiles/3.26.0-msvc3/CMakeRCCompiler.cmake"
   "CMakeFiles/3.26.0-msvc3/CMakeCCompiler.cmake"
   "CMakeFiles/3.26.0-msvc3/CMakeCXXCompiler.cmake"
   "_deps/googletest-subbuild/CMakeLists.txt"
@@ -172,8 +168,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/json-build/nlohmann_jsonConfigVersion.cmake"
   "_deps/json-build/nlohmann_jsonConfig.cmake"
   "_deps/json-build/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Src/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "Tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -182,6 +178,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
-  "Src/CMakeFiles/SearchServer.dir/DependInfo.cmake"
-  "Tests/CMakeFiles/GtestTests.dir/DependInfo.cmake"
+  "src/CMakeFiles/SearchServer.dir/DependInfo.cmake"
+  "tests/CMakeFiles/GtestTests.dir/DependInfo.cmake"
   )

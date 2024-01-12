@@ -6,5 +6,5 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("_deps/googletest-build")
 subdirs("_deps/json-build")
-subdirs("Src")
-subdirs("Tests")
+subdirs("src")
+subdirs("tests")

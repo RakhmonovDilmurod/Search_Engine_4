@@ -232,7 +232,7 @@ SearchServer: cmake_check_build_system
 
 # fast build rule for target.
 SearchServer/fast:
-	$(MAKE) $(MAKESILENT) -f Src\CMakeFiles\SearchServer.dir\build.make Src/CMakeFiles/SearchServer.dir/build
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchServer.dir\build.make src/CMakeFiles/SearchServer.dir/build
 .PHONY : SearchServer/fast
 
 #=============================================================================
@@ -245,7 +245,7 @@ GtestTests: cmake_check_build_system
 
 # fast build rule for target.
 GtestTests/fast:
-	$(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/build
+	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
 .PHONY : GtestTests/fast
 
 # Help Target

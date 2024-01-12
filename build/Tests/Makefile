@@ -141,14 +141,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\Tests\\CMakeFiles\progress.marks
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Tests/all
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\tests\\CMakeFiles\progress.marks
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Tests/clean
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -157,12 +157,12 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Tests/preinstall
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Tests/preinstall
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
@@ -171,17 +171,17 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Tests/CMakeFiles/GtestTests.dir/rule:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Tests/CMakeFiles/GtestTests.dir/rule
-.PHONY : Tests/CMakeFiles/GtestTests.dir/rule
+tests/CMakeFiles/GtestTests.dir/rule:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/CMakeFiles/GtestTests.dir/rule
+.PHONY : tests/CMakeFiles/GtestTests.dir/rule
 
 # Convenience name for target.
-GtestTests: Tests/CMakeFiles/GtestTests.dir/rule
+GtestTests: tests/CMakeFiles/GtestTests.dir/rule
 .PHONY : GtestTests
 
 # fast build rule for target.
 GtestTests/fast:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/build
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
 .PHONY : GtestTests/fast
 
 ConverterJSON_test.obj: ConverterJSON_test.cpp.obj
@@ -189,7 +189,7 @@ ConverterJSON_test.obj: ConverterJSON_test.cpp.obj
 
 # target to build an object file
 ConverterJSON_test.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj
 .PHONY : ConverterJSON_test.cpp.obj
 
 ConverterJSON_test.i: ConverterJSON_test.cpp.i
@@ -197,7 +197,7 @@ ConverterJSON_test.i: ConverterJSON_test.cpp.i
 
 # target to preprocess a source file
 ConverterJSON_test.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.i
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.i
 .PHONY : ConverterJSON_test.cpp.i
 
 ConverterJSON_test.s: ConverterJSON_test.cpp.s
@@ -205,7 +205,7 @@ ConverterJSON_test.s: ConverterJSON_test.cpp.s
 
 # target to generate assembly for a file
 ConverterJSON_test.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.s
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.s
 .PHONY : ConverterJSON_test.cpp.s
 
 InvertedIndex_test.obj: InvertedIndex_test.cpp.obj
@@ -213,7 +213,7 @@ InvertedIndex_test.obj: InvertedIndex_test.cpp.obj
 
 # target to build an object file
 InvertedIndex_test.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj
 .PHONY : InvertedIndex_test.cpp.obj
 
 InvertedIndex_test.i: InvertedIndex_test.cpp.i
@@ -221,7 +221,7 @@ InvertedIndex_test.i: InvertedIndex_test.cpp.i
 
 # target to preprocess a source file
 InvertedIndex_test.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.i
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.i
 .PHONY : InvertedIndex_test.cpp.i
 
 InvertedIndex_test.s: InvertedIndex_test.cpp.s
@@ -229,7 +229,7 @@ InvertedIndex_test.s: InvertedIndex_test.cpp.s
 
 # target to generate assembly for a file
 InvertedIndex_test.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.s
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.s
 .PHONY : InvertedIndex_test.cpp.s
 
 SearchServer_test.obj: SearchServer_test.cpp.obj
@@ -237,7 +237,7 @@ SearchServer_test.obj: SearchServer_test.cpp.obj
 
 # target to build an object file
 SearchServer_test.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.obj
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.obj
 .PHONY : SearchServer_test.cpp.obj
 
 SearchServer_test.i: SearchServer_test.cpp.i
@@ -245,7 +245,7 @@ SearchServer_test.i: SearchServer_test.cpp.i
 
 # target to preprocess a source file
 SearchServer_test.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.i
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.i
 .PHONY : SearchServer_test.cpp.i
 
 SearchServer_test.s: SearchServer_test.cpp.s
@@ -253,80 +253,80 @@ SearchServer_test.s: SearchServer_test.cpp.s
 
 # target to generate assembly for a file
 SearchServer_test.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.s
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/SearchServer_test.cpp.s
 .PHONY : SearchServer_test.cpp.s
 
-__/Src/ConverterJSON.obj: __/Src/ConverterJSON.cpp.obj
-.PHONY : __/Src/ConverterJSON.obj
+__/src/ConverterJSON.obj: __/src/ConverterJSON.cpp.obj
+.PHONY : __/src/ConverterJSON.obj
 
 # target to build an object file
-__/Src/ConverterJSON.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/ConverterJSON.cpp.obj
-.PHONY : __/Src/ConverterJSON.cpp.obj
+__/src/ConverterJSON.cpp.obj:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.obj
+.PHONY : __/src/ConverterJSON.cpp.obj
 
-__/Src/ConverterJSON.i: __/Src/ConverterJSON.cpp.i
-.PHONY : __/Src/ConverterJSON.i
+__/src/ConverterJSON.i: __/src/ConverterJSON.cpp.i
+.PHONY : __/src/ConverterJSON.i
 
 # target to preprocess a source file
-__/Src/ConverterJSON.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/ConverterJSON.cpp.i
-.PHONY : __/Src/ConverterJSON.cpp.i
+__/src/ConverterJSON.cpp.i:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.i
+.PHONY : __/src/ConverterJSON.cpp.i
 
-__/Src/ConverterJSON.s: __/Src/ConverterJSON.cpp.s
-.PHONY : __/Src/ConverterJSON.s
+__/src/ConverterJSON.s: __/src/ConverterJSON.cpp.s
+.PHONY : __/src/ConverterJSON.s
 
 # target to generate assembly for a file
-__/Src/ConverterJSON.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/ConverterJSON.cpp.s
-.PHONY : __/Src/ConverterJSON.cpp.s
+__/src/ConverterJSON.cpp.s:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.s
+.PHONY : __/src/ConverterJSON.cpp.s
 
-__/Src/InvertedIndex.obj: __/Src/InvertedIndex.cpp.obj
-.PHONY : __/Src/InvertedIndex.obj
+__/src/InvertedIndex.obj: __/src/InvertedIndex.cpp.obj
+.PHONY : __/src/InvertedIndex.obj
 
 # target to build an object file
-__/Src/InvertedIndex.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/InvertedIndex.cpp.obj
-.PHONY : __/Src/InvertedIndex.cpp.obj
+__/src/InvertedIndex.cpp.obj:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj
+.PHONY : __/src/InvertedIndex.cpp.obj
 
-__/Src/InvertedIndex.i: __/Src/InvertedIndex.cpp.i
-.PHONY : __/Src/InvertedIndex.i
+__/src/InvertedIndex.i: __/src/InvertedIndex.cpp.i
+.PHONY : __/src/InvertedIndex.i
 
 # target to preprocess a source file
-__/Src/InvertedIndex.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/InvertedIndex.cpp.i
-.PHONY : __/Src/InvertedIndex.cpp.i
+__/src/InvertedIndex.cpp.i:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.i
+.PHONY : __/src/InvertedIndex.cpp.i
 
-__/Src/InvertedIndex.s: __/Src/InvertedIndex.cpp.s
-.PHONY : __/Src/InvertedIndex.s
+__/src/InvertedIndex.s: __/src/InvertedIndex.cpp.s
+.PHONY : __/src/InvertedIndex.s
 
 # target to generate assembly for a file
-__/Src/InvertedIndex.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/InvertedIndex.cpp.s
-.PHONY : __/Src/InvertedIndex.cpp.s
+__/src/InvertedIndex.cpp.s:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.s
+.PHONY : __/src/InvertedIndex.cpp.s
 
-__/Src/SearchServer.obj: __/Src/SearchServer.cpp.obj
-.PHONY : __/Src/SearchServer.obj
+__/src/SearchServer.obj: __/src/SearchServer.cpp.obj
+.PHONY : __/src/SearchServer.obj
 
 # target to build an object file
-__/Src/SearchServer.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/SearchServer.cpp.obj
-.PHONY : __/Src/SearchServer.cpp.obj
+__/src/SearchServer.cpp.obj:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/SearchServer.cpp.obj
+.PHONY : __/src/SearchServer.cpp.obj
 
-__/Src/SearchServer.i: __/Src/SearchServer.cpp.i
-.PHONY : __/Src/SearchServer.i
+__/src/SearchServer.i: __/src/SearchServer.cpp.i
+.PHONY : __/src/SearchServer.i
 
 # target to preprocess a source file
-__/Src/SearchServer.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/SearchServer.cpp.i
-.PHONY : __/Src/SearchServer.cpp.i
+__/src/SearchServer.cpp.i:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/SearchServer.cpp.i
+.PHONY : __/src/SearchServer.cpp.i
 
-__/Src/SearchServer.s: __/Src/SearchServer.cpp.s
-.PHONY : __/Src/SearchServer.s
+__/src/SearchServer.s: __/src/SearchServer.cpp.s
+.PHONY : __/src/SearchServer.s
 
 # target to generate assembly for a file
-__/Src/SearchServer.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/__/Src/SearchServer.cpp.s
-.PHONY : __/Src/SearchServer.cpp.s
+__/src/SearchServer.cpp.s:
+	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/__/src/SearchServer.cpp.s
+.PHONY : __/src/SearchServer.cpp.s
 
 # Help Target
 help:
@@ -351,15 +351,15 @@ help:
 	@echo ... SearchServer_test.obj
 	@echo ... SearchServer_test.i
 	@echo ... SearchServer_test.s
-	@echo ... __/Src/ConverterJSON.obj
-	@echo ... __/Src/ConverterJSON.i
-	@echo ... __/Src/ConverterJSON.s
-	@echo ... __/Src/InvertedIndex.obj
-	@echo ... __/Src/InvertedIndex.i
-	@echo ... __/Src/InvertedIndex.s
-	@echo ... __/Src/SearchServer.obj
-	@echo ... __/Src/SearchServer.i
-	@echo ... __/Src/SearchServer.s
+	@echo ... __/src/ConverterJSON.obj
+	@echo ... __/src/ConverterJSON.i
+	@echo ... __/src/ConverterJSON.s
+	@echo ... __/src/InvertedIndex.obj
+	@echo ... __/src/InvertedIndex.i
+	@echo ... __/src/InvertedIndex.s
+	@echo ... __/src/SearchServer.obj
+	@echo ... __/src/SearchServer.i
+	@echo ... __/src/SearchServer.s
 .PHONY : help
 
 

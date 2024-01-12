@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/ConverterJSON.cpp" "Src/CMakeFiles/SearchServer.dir/ConverterJSON.cpp.obj" "gcc" "Src/CMakeFiles/SearchServer.dir/ConverterJSON.cpp.obj.d"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/InvertedIndex.cpp" "Src/CMakeFiles/SearchServer.dir/InvertedIndex.cpp.obj" "gcc" "Src/CMakeFiles/SearchServer.dir/InvertedIndex.cpp.obj.d"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/SearchServer.cpp" "Src/CMakeFiles/SearchServer.dir/SearchServer.cpp.obj" "gcc" "Src/CMakeFiles/SearchServer.dir/SearchServer.cpp.obj.d"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Src/main.cpp" "Src/CMakeFiles/SearchServer.dir/main.cpp.obj" "gcc" "Src/CMakeFiles/SearchServer.dir/main.cpp.obj.d"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/ConverterJSON.cpp" "src/CMakeFiles/SearchServer.dir/ConverterJSON.cpp.obj" "gcc" "src/CMakeFiles/SearchServer.dir/ConverterJSON.cpp.obj.d"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/InvertedIndex.cpp" "src/CMakeFiles/SearchServer.dir/InvertedIndex.cpp.obj" "gcc" "src/CMakeFiles/SearchServer.dir/InvertedIndex.cpp.obj.d"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/SearchServer.cpp" "src/CMakeFiles/SearchServer.dir/SearchServer.cpp.obj" "gcc" "src/CMakeFiles/SearchServer.dir/SearchServer.cpp.obj.d"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/main.cpp" "src/CMakeFiles/SearchServer.dir/main.cpp.obj" "gcc" "src/CMakeFiles/SearchServer.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

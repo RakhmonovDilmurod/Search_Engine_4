@@ -64,53 +64,23 @@ CMAKE_BINARY_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build
 # The main recursive "all" target.
 all: _deps/googletest-build/all
 all: _deps/json-build/all
-all: Src/all
-all: Tests/all
+all: src/all
+all: tests/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: _deps/googletest-build/preinstall
 preinstall: _deps/json-build/preinstall
-preinstall: Src/preinstall
-preinstall: Tests/preinstall
+preinstall: src/preinstall
+preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: _deps/googletest-build/clean
 clean: _deps/json-build/clean
-clean: Src/clean
-clean: Tests/clean
+clean: src/clean
+clean: tests/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory Src
-
-# Recursive "all" directory target.
-Src/all: Src/CMakeFiles/SearchServer.dir/all
-.PHONY : Src/all
-
-# Recursive "preinstall" directory target.
-Src/preinstall:
-.PHONY : Src/preinstall
-
-# Recursive "clean" directory target.
-Src/clean: Src/CMakeFiles/SearchServer.dir/clean
-.PHONY : Src/clean
-
-#=============================================================================
-# Directory level rules for directory Tests
-
-# Recursive "all" directory target.
-Tests/all: Tests/CMakeFiles/GtestTests.dir/all
-.PHONY : Tests/all
-
-# Recursive "preinstall" directory target.
-Tests/preinstall:
-.PHONY : Tests/preinstall
-
-# Recursive "clean" directory target.
-Tests/clean: Tests/CMakeFiles/GtestTests.dir/clean
-.PHONY : Tests/clean
 
 #=============================================================================
 # Directory level rules for directory _deps/googletest-build
@@ -177,6 +147,36 @@ _deps/json-build/preinstall:
 # Recursive "clean" directory target.
 _deps/json-build/clean:
 .PHONY : _deps/json-build/clean
+
+#=============================================================================
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/SearchServer.dir/all
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/SearchServer.dir/clean
+.PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory tests
+
+# Recursive "all" directory target.
+tests/all: tests/CMakeFiles/GtestTests.dir/all
+.PHONY : tests/all
+
+# Recursive "preinstall" directory target.
+tests/preinstall:
+.PHONY : tests/preinstall
+
+# Recursive "clean" directory target.
+tests/clean: tests/CMakeFiles/GtestTests.dir/clean
+.PHONY : tests/clean
 
 #=============================================================================
 # Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
@@ -284,57 +284,57 @@ _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
-# Target rules for target Src/CMakeFiles/SearchServer.dir
+# Target rules for target src/CMakeFiles/SearchServer.dir
 
 # All Build rule for target.
-Src/CMakeFiles/SearchServer.dir/all:
-	$(MAKE) $(MAKESILENT) -f Src\CMakeFiles\SearchServer.dir\build.make Src/CMakeFiles/SearchServer.dir/depend
-	$(MAKE) $(MAKESILENT) -f Src\CMakeFiles\SearchServer.dir\build.make Src/CMakeFiles/SearchServer.dir/build
+src/CMakeFiles/SearchServer.dir/all:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchServer.dir\build.make src/CMakeFiles/SearchServer.dir/depend
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchServer.dir\build.make src/CMakeFiles/SearchServer.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=8,9,10,11,12 "Built target SearchServer"
-.PHONY : Src/CMakeFiles/SearchServer.dir/all
+.PHONY : src/CMakeFiles/SearchServer.dir/all
 
 # Build rule for subdir invocation for target.
-Src/CMakeFiles/SearchServer.dir/rule: cmake_check_build_system
+src/CMakeFiles/SearchServer.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Src/CMakeFiles/SearchServer.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/SearchServer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
-.PHONY : Src/CMakeFiles/SearchServer.dir/rule
+.PHONY : src/CMakeFiles/SearchServer.dir/rule
 
 # Convenience name for target.
-SearchServer: Src/CMakeFiles/SearchServer.dir/rule
+SearchServer: src/CMakeFiles/SearchServer.dir/rule
 .PHONY : SearchServer
 
 # clean rule for target.
-Src/CMakeFiles/SearchServer.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Src\CMakeFiles\SearchServer.dir\build.make Src/CMakeFiles/SearchServer.dir/clean
-.PHONY : Src/CMakeFiles/SearchServer.dir/clean
+src/CMakeFiles/SearchServer.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchServer.dir\build.make src/CMakeFiles/SearchServer.dir/clean
+.PHONY : src/CMakeFiles/SearchServer.dir/clean
 
 #=============================================================================
-# Target rules for target Tests/CMakeFiles/GtestTests.dir
+# Target rules for target tests/CMakeFiles/GtestTests.dir
 
 # All Build rule for target.
-Tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-Tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/depend
-	$(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/build
+tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target GtestTests"
-.PHONY : Tests/CMakeFiles/GtestTests.dir/all
+.PHONY : tests/CMakeFiles/GtestTests.dir/all
 
 # Build rule for subdir invocation for target.
-Tests/CMakeFiles/GtestTests.dir/rule: cmake_check_build_system
+tests/CMakeFiles/GtestTests.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 11
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Tests/CMakeFiles/GtestTests.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/CMakeFiles/GtestTests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
-.PHONY : Tests/CMakeFiles/GtestTests.dir/rule
+.PHONY : tests/CMakeFiles/GtestTests.dir/rule
 
 # Convenience name for target.
-GtestTests: Tests/CMakeFiles/GtestTests.dir/rule
+GtestTests: tests/CMakeFiles/GtestTests.dir/rule
 .PHONY : GtestTests
 
 # clean rule for target.
-Tests/CMakeFiles/GtestTests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Tests\CMakeFiles\GtestTests.dir\build.make Tests/CMakeFiles/GtestTests.dir/clean
-.PHONY : Tests/CMakeFiles/GtestTests.dir/clean
+tests/CMakeFiles/GtestTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/clean
+.PHONY : tests/CMakeFiles/GtestTests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
