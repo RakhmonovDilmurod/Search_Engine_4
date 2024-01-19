@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <nlohmann/json.hpp>
+#include "nlohmann/json.hpp"
 #include <fstream>
 #include <vector>
 #include <cstdlib>
@@ -93,7 +93,7 @@ public:
             }
 
         return requests;
-    }a
+    }
         else{
             throw JsonFileContainingError(requestsJsonPath, "requests");
         }
