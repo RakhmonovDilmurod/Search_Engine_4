@@ -9,9 +9,9 @@
 #include <sstream>
 #include <unordered_map>
 #include <unordered_set>
-#include "ConvertJSON.h"
+#include "ConverterJSON.h"
 #include "InvertedIndex.h"
-#include "SearchServer.h"
+#include "SearchEngine.h"
 #include <gtest/gtest.h>
 
 
