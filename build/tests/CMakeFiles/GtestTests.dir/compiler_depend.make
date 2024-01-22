@@ -682,6 +682,7 @@ tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj: C:/Users/HP/OneDrive
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
+  _deps/json-src/include/nlohmann/json.hpp \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
   _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
   _deps/googletest-src/googletest/include/gtest/gtest-message.h \
@@ -1045,6 +1046,7 @@ tests/CMakeFiles/GtestTests.dir/SearchEngine_test.cpp.obj: C:/Users/HP/OneDrive/
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
+  _deps/json-src/include/nlohmann/json.hpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
   _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
@@ -1727,7 +1729,8 @@ tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj: C:/Users/HP/OneDri
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h
+  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
+  _deps/json-src/include/nlohmann/json.hpp
 
 tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/SearchEngine.cpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
@@ -2048,7 +2051,51 @@ tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj: C:/Users/HP/OneDriv
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h
+  _deps/json-src/include/nlohmann/json.hpp \
+  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
+  _deps/googletest-src/googletest/include/gtest/gtest.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-message.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-port.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/stat.h \
+  C:/mingw64/x86_64-w64-mingw32/include/io.h \
+  _deps/googletest-src/googletest/include/gtest/internal/custom/gtest-port.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-port-arch.h \
+  C:/mingw64/x86_64-w64-mingw32/include/direct.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/condition_variable \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
+  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant \
+  _deps/googletest-src/googletest/include/gtest/gtest-death-test.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-death-test-internal.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-matchers.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-printers.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-internal.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/float.h \
+  C:/mingw64/x86_64-w64-mingw32/include/float.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-filepath.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-string.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-type-util.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cxxabi.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cxxabi_tweaks.h \
+  _deps/googletest-src/googletest/include/gtest/internal/custom/gtest-printers.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-param-test.h \
+  _deps/googletest-src/googletest/include/gtest/internal/gtest-param-util.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-test-part.h \
+  _deps/googletest-src/googletest/include/gtest/gtest-typed-test.h \
+  _deps/googletest-src/googletest/include/gtest/gtest_pred_impl.h \
+  _deps/googletest-src/googletest/include/gtest/gtest_prod.h
 
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator_base_types.h:
