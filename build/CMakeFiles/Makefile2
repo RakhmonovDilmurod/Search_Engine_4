@@ -313,8 +313,8 @@ src/CMakeFiles/SearchEngine.dir/clean:
 # Target rules for target tests/CMakeFiles/GtestTests.dir
 
 # All Build rule for target.
-tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target GtestTests"
