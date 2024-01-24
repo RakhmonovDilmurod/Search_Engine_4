@@ -1,5 +1,4 @@
 #include <iostream>
-#include <..\build\_deps\json-src\include\nlohmann\json.hpp>
 #include <fstream>
 #include <vector>
 #include <cstdlib>
@@ -9,7 +8,7 @@
 #include <sstream>
 #include <unordered_map>
 #include <unordered_set>
-#include "ConverterJSON.h"
+#include "../include/ConverterJSON.h"
 #include "InvertedIndex.h"
 #include "SearchEngine.h"
 #include <gtest/gtest.h>

@@ -150,7 +150,23 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-src/include/nlohmann/json.hpp \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
@@ -161,21 +177,19 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ranges_algobase.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
+ C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
+ C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-src/include/nlohmann/json.hpp \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
@@ -209,10 +223,6 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/forward_list \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/forward_list.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/forward_list.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/valarray \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
  C:/mingw64/x86_64-w64-mingw32/include/math.h \
@@ -273,13 +283,10 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/codecvt \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_dir.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
@@ -310,15 +317,7 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/any \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
- C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
- C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-src/include/nlohmann/json.hpp \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include/gtest/gtest.h \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
