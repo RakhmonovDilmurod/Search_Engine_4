@@ -1,5 +1,5 @@
 #include <iostream>
-#include <nlohmann/json.hpp>
+#include <..\build\_deps\json-src\include\nlohmann\json.hpp>
 #include <fstream>
 #include <vector>
 #include <cstdlib>
