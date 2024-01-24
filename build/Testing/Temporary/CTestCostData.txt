@@ -1,0 +1,10 @@
+ConverterJSON.readConfig 1 0.0637102
+ConverterJSON.readRequests 1 0.0631519
+ConverterJSON.getResponsesLimit 1 0.0631674
+ConverterJSON.getRequests 1 0.06098
+ConverterJSON.getFiles 1 0.0641056
+ConverterJSON.putAnswers 1 0.0653107
+SearchServer.search 1 0.0631463
+InvertedIndex.updateDocumentBase 1 0.0648365
+InvertedIndex.getWordCount 1 0.0621913
+---
