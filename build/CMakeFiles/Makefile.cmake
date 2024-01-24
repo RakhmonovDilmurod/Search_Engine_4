@@ -56,10 +56,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/googletest-src/googletest/cmake/gtest.pc.in"
   "_deps/googletest-src/googletest/cmake/gtest_main.pc.in"
   "_deps/googletest-src/googletest/cmake/internal_utils.cmake"
-  "_deps/json-src/CMakeLists.txt"
-  "_deps/json-src/cmake/config.cmake.in"
-  "_deps/json-src/cmake/nlohmann_jsonConfigVersion.cmake.in"
-  "_deps/json-src/cmake/pkg-config.pc.in"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/nlohmann_json/CMakeLists.txt"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/nlohmann_json/cmake/config.cmake.in"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/nlohmann_json/cmake/nlohmann_jsonConfigVersion.cmake.in"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/nlohmann_json/cmake/pkg-config.pc.in"
   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/CMakeLists.txt"
   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/CMakeLists.txt"
   )
@@ -73,7 +73,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-subbuild/CMakeLists.txt"
-  "_deps/json-subbuild/CMakeLists.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/googletest-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "_deps/googletest-build/googletest/generated/gmock.pc"
@@ -84,12 +83,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-build/googletest/generated/gtest.pc"
   "_deps/googletest-build/googletest/generated/gtest_main.pc"
   "_deps/googletest-build/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "_deps/json-build/nlohmann_json.pc"
-  "_deps/json-build/nlohmann_jsonConfigVersion.cmake"
-  "_deps/json-build/nlohmann_jsonConfig.cmake"
-  "_deps/json-build/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "nlohmann_json/nlohmann_json.pc"
+  "nlohmann_json/nlohmann_jsonConfigVersion.cmake"
+  "nlohmann_json/nlohmann_jsonConfig.cmake"
+  "nlohmann_json/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

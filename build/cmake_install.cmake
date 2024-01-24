@@ -40,9 +40,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/cmake_install.cmake")
-  include("C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/cmake_install.cmake")
   include("C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/src/cmake_install.cmake")
   include("C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/tests/cmake_install.cmake")
+  include("C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/cmake_install.cmake")
 
 endif()
 

@@ -30,13 +30,6 @@ C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-bui
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googletest/CMakeFiles/install.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googletest/CMakeFiles/install/local.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build/googletest/CMakeFiles/install/strip.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/test.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/edit_cache.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/rebuild_cache.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/list_install_components.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/install.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/install/local.dir
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/json-build/CMakeFiles/install/strip.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/src/CMakeFiles/SearchEngine.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/src/CMakeFiles/test.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/src/CMakeFiles/edit_cache.dir
@@ -53,3 +46,10 @@ C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/tests/CMakeFiles/lis
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/tests/CMakeFiles/install.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/tests/CMakeFiles/install/local.dir
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/tests/CMakeFiles/install/strip.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/test.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/edit_cache.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/rebuild_cache.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/list_install_components.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/install.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/install/local.dir
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/nlohmann_json/CMakeFiles/install/strip.dir
