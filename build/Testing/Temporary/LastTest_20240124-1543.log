@@ -1,3 +1,30 @@
-Start testing: Jan 24 20:59 West Asia Standard Time
+Start testing: Jan 24 21:01 West Asia Standard Time
 ----------------------------------------------------------
-End testing: Jan 24 20:59 West Asia Standard Time
+9/9 Testing: InvertedIndex.getWordCount
+9/9 Test: InvertedIndex.getWordCount
+Command: "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe" "--gtest_filter=InvertedIndex.getWordCount" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/tests
+"InvertedIndex.getWordCount" start time: Jan 24 21:01 West Asia Standard Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = InvertedIndex.getWordCount
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from InvertedIndex
+[ RUN      ] InvertedIndex.getWordCount
+[       OK ] InvertedIndex.getWordCount (0 ms)
+[----------] 1 test from InvertedIndex (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"InvertedIndex.getWordCount" end time: Jan 24 21:01 West Asia Standard Time
+"InvertedIndex.getWordCount" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 24 21:01 West Asia Standard Time
