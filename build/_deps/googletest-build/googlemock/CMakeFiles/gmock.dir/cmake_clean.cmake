@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../bin/libgmockpdb_debug_postfix-NOTFOUND.pdb"
-  "../../../lib/libgmock.a"
+  "../../../bin/libgmockd.pdb"
+  "../../../lib/libgmockd.a"
   "CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
   "CMakeFiles/gmock.dir/src/gmock-all.cc.obj.d"
 )

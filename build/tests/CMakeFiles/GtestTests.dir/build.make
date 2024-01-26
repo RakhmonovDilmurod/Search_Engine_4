@@ -177,8 +177,8 @@ C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: test
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.obj
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: tests/CMakeFiles/GtestTests.dir/build.make
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: lib/libgtest_main.a
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: lib/libgtest.a
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: lib/libgtest_maind.a
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: lib/libgtestd.a
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: tests/CMakeFiles/GtestTests.dir/linkLibs.rsp
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: tests/CMakeFiles/GtestTests.dir/objects1.rsp
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe: tests/CMakeFiles/GtestTests.dir/link.txt
