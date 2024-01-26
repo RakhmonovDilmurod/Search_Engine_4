@@ -20,6 +20,31 @@ To build the project, follow these steps:
 5. Build the project using your preferred build tool.
 6. After the build is complete, you can run the search engine.
 
+## Launching the program:
+1.Make sure you have all the required dependencies installed.
+2.Check for a config.json file in the ../ directory. If the file doesn't exist, create it and make sure it's configured correctly.
+3.Open a terminal and go to the directory with the program:
+```ruby
+bash
+   cd .../Search_Engine_4
+ ``` 
+4.Run the program:
+```ruby
+bash
+   ./SearchEngine
+``` 
+## Launching the tests: 
+1.Make sure you have all the required test dependencies installed.
+2.Open a terminal and go to the tests directory:
+```ruby
+bash
+   cd .../Search_Engine_4/tests
+```
+3.Run the tests: 
+```ruby
+bash
+./GtestTests
+```
 ## Using the Search Engine
 To use the search engine, you need to have a dataset of documents. The search engine supports the following files format: config.json , requests.json , answers.json
 The search engine provides a simple command-line interface for searching documents. Type the search query and press Enter to receive the search results.
