@@ -5,10 +5,10 @@
                 "max_responses": 5
  },
        "files": [
-                   "C:/New folder/file001.txt",
-                   "C:/New folder/file002.txt",
-                   "C:/New folder/file003.txt",
-                   "C:/New folder/file004.txt"
+                   "../file001.txt",
+                   "../file002.txt",
+                   "../file003.txt",
+                   "../file004.txt"
               ]
  }
  
