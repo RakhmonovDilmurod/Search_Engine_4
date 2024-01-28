@@ -53,30 +53,27 @@ RM = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Common
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4"
+CMAKE_SOURCE_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build"
+CMAKE_BINARY_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: _deps/googletest-build/all
 all: src/all
 all: tests/all
 all: nlohmann_json/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: _deps/googletest-build/preinstall
 preinstall: src/preinstall
 preinstall: tests/preinstall
 preinstall: nlohmann_json/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: _deps/googletest-build/clean
 clean: src/clean
 clean: tests/clean
 clean: nlohmann_json/clean
@@ -168,120 +165,17 @@ src/clean: src/CMakeFiles/SearchEngine.dir/clean
 
 # Recursive "all" directory target.
 tests/all: tests/CMakeFiles/GtestTests.dir/all
+tests/all: _deps/googletest-build/all
 .PHONY : tests/all
 
 # Recursive "preinstall" directory target.
-tests/preinstall:
+tests/preinstall: _deps/googletest-build/preinstall
 .PHONY : tests/preinstall
 
 # Recursive "clean" directory target.
 tests/clean: tests/CMakeFiles/GtestTests.dir/clean
+tests/clean: _deps/googletest-build/clean
 .PHONY : tests/clean
-
-#=============================================================================
-# Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
-
-# All Build rule for target.
-_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" --progress-num=13,14 "Built target gmock"
-.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
-.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
-
-# Convenience name for target.
-gmock: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
-.PHONY : gmock
-
-# clean rule for target.
-_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
-
-# All Build rule for target.
-_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
-_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" --progress-num=15,16 "Built target gmock_main"
-.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
-.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
-
-# Convenience name for target.
-gmock_main: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
-.PHONY : gmock_main
-
-# clean rule for target.
-_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/googletest-build/googletest/CMakeFiles/gtest.dir
-
-# All Build rule for target.
-_deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" --progress-num=17,18 "Built target gtest"
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
-
-# Convenience name for target.
-gtest: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
-.PHONY : gtest
-
-# clean rule for target.
-_deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
-
-#=============================================================================
-# Target rules for target _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
-
-# All Build rule for target.
-_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" --progress-num=19,20 "Built target gtest_main"
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-
-# Build rule for subdir invocation for target.
-_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
-
-# Convenience name for target.
-gtest_main: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
-.PHONY : gtest_main
-
-# clean rule for target.
-_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
-.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/SearchEngine.dir
@@ -290,14 +184,14 @@ _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
 src/CMakeFiles/SearchEngine.dir/all:
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" --progress-num=8,9,10,11,12 "Built target SearchEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=8,9,10,11,12 "Built target SearchEngine"
 .PHONY : src/CMakeFiles/SearchEngine.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/SearchEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/SearchEngine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
 .PHONY : src/CMakeFiles/SearchEngine.dir/rule
 
 # Convenience name for target.
@@ -317,14 +211,14 @@ tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFile
 tests/CMakeFiles/GtestTests.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target GtestTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target GtestTests"
 .PHONY : tests/CMakeFiles/GtestTests.dir/all
 
 # Build rule for subdir invocation for target.
 tests/CMakeFiles/GtestTests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 11
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 tests/CMakeFiles/GtestTests.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
 .PHONY : tests/CMakeFiles/GtestTests.dir/rule
 
 # Convenience name for target.
@@ -335,6 +229,111 @@ GtestTests: tests/CMakeFiles/GtestTests.dir/rule
 tests/CMakeFiles/GtestTests.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/clean
 .PHONY : tests/CMakeFiles/GtestTests.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
+
+# All Build rule for target.
+_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=13,14 "Built target gmock"
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
+
+# Convenience name for target.
+gmock: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
+.PHONY : gmock
+
+# clean rule for target.
+_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
+
+# All Build rule for target.
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=15,16 "Built target gmock_main"
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
+
+# Convenience name for target.
+gmock_main: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
+.PHONY : gmock_main
+
+# clean rule for target.
+_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+.PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/googletest-build/googletest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+_deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=17,18 "Built target gtest"
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
+.PHONY : gtest
+
+# clean rule for target.
+_deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
+
+# All Build rule for target.
+_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles --progress-num=19,20 "Built target gtest_main"
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
+
+# Convenience name for target.
+gtest_main: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
+.PHONY : gtest_main
+
+# clean rule for target.
+_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+.PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

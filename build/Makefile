@@ -56,23 +56,13 @@ RM = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Common
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4"
+CMAKE_SOURCE_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build"
+CMAKE_BINARY_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\ctest.exe" --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -96,7 +86,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"gmock\" \"gtest\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -141,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -169,6 +159,32 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named SearchEngine
+
+# Build rule for target.
+SearchEngine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchEngine
+.PHONY : SearchEngine
+
+# fast build rule for target.
+SearchEngine/fast:
+	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/build
+.PHONY : SearchEngine/fast
+
+#=============================================================================
+# Target rules for targets named GtestTests
+
+# Build rule for target.
+GtestTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GtestTests
+.PHONY : GtestTests
+
+# fast build rule for target.
+GtestTests/fast:
+	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
+.PHONY : GtestTests/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -222,32 +238,6 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-#=============================================================================
-# Target rules for targets named SearchEngine
-
-# Build rule for target.
-SearchEngine: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SearchEngine
-.PHONY : SearchEngine
-
-# fast build rule for target.
-SearchEngine/fast:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/build
-.PHONY : SearchEngine/fast
-
-#=============================================================================
-# Target rules for targets named GtestTests
-
-# Build rule for target.
-GtestTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GtestTests
-.PHONY : GtestTests
-
-# fast build rule for target.
-GtestTests/fast:
-	$(MAKE) $(MAKESILENT) -f tests\CMakeFiles\GtestTests.dir\build.make tests/CMakeFiles/GtestTests.dir/build
-.PHONY : GtestTests/fast
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -260,7 +250,6 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... test
 	@echo ... GtestTests
 	@echo ... SearchEngine
 	@echo ... gmock

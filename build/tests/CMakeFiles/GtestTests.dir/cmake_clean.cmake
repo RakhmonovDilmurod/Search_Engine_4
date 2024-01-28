@@ -1,7 +1,4 @@
 file(REMOVE_RECURSE
-  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/tests/GtestTests.exe"
-  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/tests/GtestTests.exe.manifest"
-  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/tests/GtestTests.pdb"
   "CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj"
   "CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj.d"
   "CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj"
@@ -14,7 +11,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj.d"
   "CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj"
   "CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj.d"
-  "GtestTests[1]_tests.cmake"
+  "GtestTests.exe"
+  "GtestTests.exe.manifest"
+  "GtestTests.pdb"
   "libGtestTests.dll.a"
 )
 

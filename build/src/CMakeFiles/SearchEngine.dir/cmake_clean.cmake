@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/SearchEngine.exe"
-  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/SearchEngine.exe.manifest"
-  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/SearchEngine.pdb"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/SearchEngine.exe"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/SearchEngine.exe.manifest"
+  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/SearchEngine.pdb"
   "CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj"
   "CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj.d"
   "CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj"
