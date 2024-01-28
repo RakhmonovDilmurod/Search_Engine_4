@@ -45,9 +45,9 @@ public:
 class ConverterJSON {
 private:
 
-    const std::string configJsonPath   = "../config.json";
-    const std::string requestsJsonPath =  "../requests.json";
-    const std::string answersJsonPath  =  "../answers.json";
+    const std::string configJsonPath   = "./config/config.json";
+    const std::string requestsJsonPath =  "./config/requests.json";
+    const std::string answersJsonPath  =  "./config/answers.json";
     json answersJsonFile;
     json requestsJsonFile;
 
