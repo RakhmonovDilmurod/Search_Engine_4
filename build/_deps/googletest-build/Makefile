@@ -56,10 +56,10 @@ RM = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Common
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4
+CMAKE_SOURCE_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build
+CMAKE_BINARY_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -141,14 +141,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\_deps\googletest-build\\CMakeFiles\progress.marks
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\_deps\googletest-build\\CMakeFiles\progress.marks"
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/clean
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/clean
 .PHONY : clean
 
 # The main clean target
@@ -157,17 +157,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/preinstall
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/preinstall
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 _deps/googletest-build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -194,6 +194,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

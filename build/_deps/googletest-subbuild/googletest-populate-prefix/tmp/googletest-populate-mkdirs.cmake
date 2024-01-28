@@ -4,19 +4,19 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-build"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-src"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-build"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/tmp"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp${cfgdir}") # cfgdir has leading slash
 endif()

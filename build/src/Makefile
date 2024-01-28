@@ -56,10 +56,10 @@ RM = "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Common
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4
+CMAKE_SOURCE_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build
+CMAKE_BINARY_DIR = "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -141,14 +141,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\src\\CMakeFiles\progress.marks
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build\CMakeFiles 0
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\src\\CMakeFiles\progress.marks"
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\HP\Downloads\Search_Engine_4-main (1)\Search_Engine_4 (1)\Search_Engine_4\build\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/clean
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -157,22 +157,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/SearchEngine.dir/rule:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/SearchEngine.dir/rule
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/CMakeFiles/SearchEngine.dir/rule
 .PHONY : src/CMakeFiles/SearchEngine.dir/rule
 
 # Convenience name for target.
@@ -181,7 +181,7 @@ SearchEngine: src/CMakeFiles/SearchEngine.dir/rule
 
 # fast build rule for target.
 SearchEngine/fast:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/build
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/build
 .PHONY : SearchEngine/fast
 
 ConverterJSON.obj: ConverterJSON.cpp.obj
@@ -189,7 +189,7 @@ ConverterJSON.obj: ConverterJSON.cpp.obj
 
 # target to build an object file
 ConverterJSON.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj
 .PHONY : ConverterJSON.cpp.obj
 
 ConverterJSON.i: ConverterJSON.cpp.i
@@ -197,7 +197,7 @@ ConverterJSON.i: ConverterJSON.cpp.i
 
 # target to preprocess a source file
 ConverterJSON.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.i
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.i
 .PHONY : ConverterJSON.cpp.i
 
 ConverterJSON.s: ConverterJSON.cpp.s
@@ -205,7 +205,7 @@ ConverterJSON.s: ConverterJSON.cpp.s
 
 # target to generate assembly for a file
 ConverterJSON.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.s
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.s
 .PHONY : ConverterJSON.cpp.s
 
 InvertedIndex.obj: InvertedIndex.cpp.obj
@@ -213,7 +213,7 @@ InvertedIndex.obj: InvertedIndex.cpp.obj
 
 # target to build an object file
 InvertedIndex.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj
 .PHONY : InvertedIndex.cpp.obj
 
 InvertedIndex.i: InvertedIndex.cpp.i
@@ -221,7 +221,7 @@ InvertedIndex.i: InvertedIndex.cpp.i
 
 # target to preprocess a source file
 InvertedIndex.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.i
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.i
 .PHONY : InvertedIndex.cpp.i
 
 InvertedIndex.s: InvertedIndex.cpp.s
@@ -229,7 +229,7 @@ InvertedIndex.s: InvertedIndex.cpp.s
 
 # target to generate assembly for a file
 InvertedIndex.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.s
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.s
 .PHONY : InvertedIndex.cpp.s
 
 SearchEngine.obj: SearchEngine.cpp.obj
@@ -237,7 +237,7 @@ SearchEngine.obj: SearchEngine.cpp.obj
 
 # target to build an object file
 SearchEngine.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj
 .PHONY : SearchEngine.cpp.obj
 
 SearchEngine.i: SearchEngine.cpp.i
@@ -245,7 +245,7 @@ SearchEngine.i: SearchEngine.cpp.i
 
 # target to preprocess a source file
 SearchEngine.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.i
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.i
 .PHONY : SearchEngine.cpp.i
 
 SearchEngine.s: SearchEngine.cpp.s
@@ -253,7 +253,7 @@ SearchEngine.s: SearchEngine.cpp.s
 
 # target to generate assembly for a file
 SearchEngine.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.s
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.s
 .PHONY : SearchEngine.cpp.s
 
 main.obj: main.cpp.obj
@@ -261,7 +261,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/main.cpp.obj
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -269,7 +269,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/main.cpp.i
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -277,7 +277,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/main.cpp.s
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(MAKE) $(MAKESILENT) -f src\CMakeFiles\SearchEngine.dir\build.make src/CMakeFiles/SearchEngine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -317,6 +317,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\HP\OneDrive\Documents\GitHub\Search_Engine_4\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\HP\DOWNLO~1\SEARCH~3\SEARCH~1\SEARCH~1\build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
