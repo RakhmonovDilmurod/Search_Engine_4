@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.exe.manifest"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests.pdb"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/tests/GtestTests.exe"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/tests/GtestTests.exe.manifest"
+  "C:/Users/HP/Downloads/Search_Engine_4-main (1)/Search_Engine_4 (1)/Search_Engine_4/tests/GtestTests.pdb"
   "CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj"
   "CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj.d"
   "CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj"
