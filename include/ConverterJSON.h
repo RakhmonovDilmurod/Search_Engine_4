@@ -43,7 +43,7 @@ public:
 
 
 class ConverterJSON {
-private:
+public:
 
     const std::string configJsonPath   = "../config.json";
     const std::string requestsJsonPath =  "../requests.json";

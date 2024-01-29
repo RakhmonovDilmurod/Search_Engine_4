@@ -53,7 +53,7 @@ public:
     auto getFreqDictionary() {
         return freq_dictionary;
     }
-private:
+public:
     std::vector<std::string> docs; // список содержимого документов
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
 };
