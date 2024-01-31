@@ -56,11 +56,10 @@ TEST(ConverterJSONTest, putAnswersTest) {
     // Create an instance of the ConverterJSON class
     ConverterJSON converter;
     // Create a sample vector of answers
-    std::vector<std::vector<std::pair<int, float>>> sampleAnswers = {
+    std::vector<std::vector<std::pair<int,float>>> sampleAnswers ={
         {{1, 0.9}, {2, 0.8}},
         {{3, 0.7}, {4, 0.6}},
-        {}  // An empty answer
-    };
+        {}; } // An empty answer
     // Call the putAnswers method with the sample answers
     ASSERT_NO_THROW(converter.putAnswers(sampleAnswers));
     

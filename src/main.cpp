@@ -8,7 +8,7 @@
 #include <sstream>
 #include <unordered_map>
 #include <unordered_set>
-#include "../include/ConverterJSON.h"
+#include "ConverterJSON.h"
 #include "InvertedIndex.h"
 #include "SearchEngine.h"
 

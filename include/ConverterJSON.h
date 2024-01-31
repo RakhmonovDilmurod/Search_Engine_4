@@ -101,25 +101,28 @@ public:
             throw JsonFileContainingError(requestsJsonPath, "requests");
         }
     }
-
-   void putAnswers( std::vector<std::vector<RelativeIndex>>& answers) {
-    answersJsonFile["answers"] = nlohmann::json::array();
-    for (size_t i = 0; i < answers.size(); ++i) {
-        nlohmann::json answerObj = nlohmann::json::object();
-        answerObj["request_id"] = i + 1;
-        nlohmann::json relevanceArr = nlohmann::json::array();
-        for (const auto& [docid, rank] : answers[i]) {
-            nlohmann::json relevanceObj = nlohmann::json::object();
-            relevanceObj["docid"] = docid;
-            relevanceObj["rank"] = rank.count;
-            relevanceArr.push_back(relevanceObj);
+void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
+        for (int i = 0; i < answers.size(); i++) {
+            std::string strI = "";
+            for (int n = 0; n < 3 - std::to_string(i).length(); n++) {
+                strI += "0";
+            }
+            strI += std::to_string(i + 1);
+            if (answers[i].empty()){
+                answersJsonFile["answers"]["request" + strI]["result"] = "false";
+            }else{
+             answersJsonFile["answers"]["request" + strI]["result"] = "true";
+                for (int j = 0; j < answers[i].size(); j++) {
+                    json::value_type block;
+                    block["docid"] = answers[i][j].first;
+                    block["rank"] = answers[i][j].second;
+                    answersJsonFile["answers"]["request" + strI]["relevance"].push_back(block);
+                }
+            }
+            std::ofstream ofstreamJsonFile(answersJsonPath);
+            ofstreamJsonFile <<std::setw(4)<< answersJsonFile;
+            ofstreamJsonFile.close();
         }
-        answerObj["relevance"] = relevanceArr;
-        answersJsonFile["answers"].push_back(answerObj);
     }
-    std::ofstream ofstreamJsonFile(answersJsonPath);
-    ofstreamJsonFile << std::setw(4) << answersJsonFile;
-    ofstreamJsonFile.close();
-}
   
  };
