@@ -171,8 +171,36 @@ TestInvertedIndexFunctionality(docs, requests, expected);
 
 ## After running
 ### The result of testing project : 
-```
+[==========] Running 9 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 6 tests from ConverterJSON
+[ RUN      ] ConverterJSON.readConfig
+[       OK ] ConverterJSON.readConfig (0 ms)
+[ RUN      ] ConverterJSON.readRequests
+[       OK ] ConverterJSON.readRequests (0 ms)
+[ RUN      ] ConverterJSON.getResponsesLimit
+[       OK ] ConverterJSON.getResponsesLimit (0 ms)
+[ RUN      ] ConverterJSON.getRequests
+[       OK ] ConverterJSON.getRequests (0 ms)
+[ RUN      ] ConverterJSON.getFiles
+[       OK ] ConverterJSON.getFiles (0 ms)
+[ RUN      ] ConverterJSON.putAnswers
+[       OK ] ConverterJSON.putAnswers (0 ms)
+[----------] 6 tests from ConverterJSON (30 ms total)
+
+[----------] 1 test from SearchServer
+[ RUN      ] SearchServer.search
+[       OK ] SearchServer.search (0 ms)
+[----------] 1 test from SearchServer (4 ms total)
+
+[----------] 2 tests from InvertedIndex
+[ RUN      ] InvertedIndex.updateDocumentBase
+[       OK ] InvertedIndex.updateDocumentBase (0 ms)
+[ RUN      ] InvertedIndex.getWordCount
+[       OK ] InvertedIndex.getWordCount (0 ms)
+[----------] 2 tests from InvertedIndex (12 ms total)
+
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (2 ms total)
-[  PASSED  ] 3 tests.
+[==========] 9 tests from 3 test suites ran. (72 ms total)
+[  PASSED  ] 9 tests.
 ```

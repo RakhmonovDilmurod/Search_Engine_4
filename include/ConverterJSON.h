@@ -12,6 +12,7 @@
 #include <unordered_set>
 #include <filesystem>
 #include "SearchEngine.h"
+#include "InvertedIndex.h"
 
 using json = nlohmann::json;
 
