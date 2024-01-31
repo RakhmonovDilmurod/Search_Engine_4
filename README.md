@@ -171,6 +171,7 @@ TestInvertedIndexFunctionality(docs, requests, expected);
 
 ## After running
 ### The result of testing project : 
+```ruby
 [==========] Running 9 tests from 3 test suites.
 [----------] Global test environment set-up.
 [----------] 6 tests from ConverterJSON
@@ -193,12 +194,14 @@ TestInvertedIndexFunctionality(docs, requests, expected);
 [       OK ] SearchServer.search (0 ms)
 [----------] 1 test from SearchServer (4 ms total)
 
+
 [----------] 2 tests from InvertedIndex
 [ RUN      ] InvertedIndex.updateDocumentBase
 [       OK ] InvertedIndex.updateDocumentBase (0 ms)
 [ RUN      ] InvertedIndex.getWordCount
 [       OK ] InvertedIndex.getWordCount (0 ms)
 [----------] 2 tests from InvertedIndex (12 ms total)
+
 
 [----------] Global test environment tear-down
 [==========] 9 tests from 3 test suites ran. (72 ms total)
