@@ -68,19 +68,19 @@
 				"parent" : 0
 			},
 			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 74,
+				"parent" : 0
+			},
+			{
 				"file" : 2
 			},
 			{
 				"command" : 6,
 				"file" : 2,
 				"line" : 13,
-				"parent" : 7
-			},
-			{
-				"command" : 6,
-				"file" : 1,
-				"line" : 74,
-				"parent" : 0
+				"parent" : 8
 			},
 			{
 				"command" : 7,
@@ -105,15 +105,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 8,
-					"path" : "/include"
-				},
-				{
-					"backtrace" : 9,
+					"backtrace" : 7,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googlemock/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 7,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googlemock"
 				},
 				{

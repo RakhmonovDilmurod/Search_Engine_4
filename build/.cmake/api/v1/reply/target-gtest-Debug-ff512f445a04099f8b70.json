@@ -70,12 +70,6 @@
 				"parent" : 6
 			},
 			{
-				"command" : 5,
-				"file" : 1,
-				"line" : 113,
-				"parent" : 0
-			},
-			{
 				"command" : 6,
 				"file" : 0,
 				"line" : 198,
@@ -99,14 +93,10 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "/include"
-				},
-				{
-					"backtrace" : 8,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 7,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest"
 				}
 			],
@@ -115,7 +105,7 @@
 			{
 				"backtraces" : 
 				[
-					9
+					8
 				],
 				"standard" : "20"
 			},

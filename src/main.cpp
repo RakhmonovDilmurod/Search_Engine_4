@@ -28,7 +28,15 @@ int main(int argc, char** argv) {
         std::vector<std::vector<RelativeIndex>> searchResults = searchSer.search(searchSer.requestsInput());
         texts = conv.GetTextDocuments();
         requests = conv.GetRequests();
-        conv.putAnswers(searchResults);
+        std::vector<std::vector<std::pair<int, float>>> ReadyResults;
+         for (const auto& outer : searchResults){
+             std::vector<std::pair<int, float>> inner_Ready;
+              for (const auto& relIndex : outer){
+                inner_Ready.emplace_back(static_cast<int>(relIndex.doc_id), static_cast<float>(relIndex.rank.count));
+              }
+                ReadyResults.push_back(inner_Ready);
+         }
+        conv.putAnswers(ReadyResults);
     } catch (OpeningError ex) {
         std::cerr << ex.what() << std::endl;
         return 1;

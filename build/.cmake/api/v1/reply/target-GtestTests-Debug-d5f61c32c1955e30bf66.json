@@ -51,19 +51,13 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 13,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
 				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 40,
+				"line" : 13,
 				"parent" : 0
 			}
 		]
@@ -81,18 +75,14 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "/include"
-				},
-				{
-					"backtrace" : 6,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/GtestTests"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/PUBLIC"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include"
 				},
 				{
@@ -100,12 +90,12 @@
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/nlohmann_json/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 6,
 					"isSystem" : true,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 6,
 					"isSystem" : true,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest"
 				}
