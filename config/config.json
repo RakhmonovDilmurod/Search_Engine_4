@@ -5,10 +5,10 @@
                 "max_responses": 5
  },
        "files": [
-                   "../file001.txt",
-                   "../file002.txt",
-                   "../file003.txt",
-                   "../file004.txt"
+                   "../Files/file001.txt",
+                   "../Files/file002.txt",
+                   "../Files/file003.txt",
+                   "../Files/file004.txt"
               ]
  }
  

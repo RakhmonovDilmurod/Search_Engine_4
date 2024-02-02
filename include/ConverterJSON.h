@@ -44,9 +44,9 @@ public:
 class ConverterJSON {
 public:
 
-    const std::string configJsonPath   = "../config.json";
-    const std::string requestsJsonPath =  "../requests.json";
-    const std::string answersJsonPath  =  "../answers.json";
+    const std::string configJsonPath   = "../config/config.json";
+    const std::string requestsJsonPath =  "../config/requests.json";
+    const std::string answersJsonPath  =  "../config/answers.json";
     json answersJsonFile;
     json requestsJsonFile;
 
@@ -126,6 +126,6 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
     std::ofstream ofstreamJsonFile(answersJsonPath);
     ofstreamJsonFile << std::setw(4) << answersJsonFile;
     ofstreamJsonFile.close();
-}
+   }
   
  };
