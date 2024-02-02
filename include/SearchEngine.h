@@ -45,7 +45,7 @@ public:
         std::istringstream iss(query);
         std::string word;
         while (iss >> word) {
-            auto entries = _index.GetWordCount(word);
+            auto entries = index.GetWordCount(word);
             for (const auto& entry : entries) {
                 doc_ranks[entry.doc_id] += entry.count;
             }
@@ -61,7 +61,6 @@ public:
       }
     return search_results;
     }
-private:
-    InvertedIndex _index;
+
 };
 

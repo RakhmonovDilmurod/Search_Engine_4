@@ -12,6 +12,7 @@
 #include <unordered_set>
 #include <filesystem>
 
+
 using json = nlohmann::json;
 
 class OpeningError : public std::exception {
@@ -44,36 +45,37 @@ public:
 class ConverterJSON {
 public:
 
-   const std::string configJsonPath   = "../config/config.json";
-   const std::string requestsJsonPath = "../config/requests.json";
-   const std::string answersJsonPath  = "../config/answers.json";
+  const std::string configJsonPath   = "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/config/config.json";
+  const std::string requestsJsonPath = "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/config/requests.json";
+  const std::string answersJsonPath  = "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/config/answers.json";
     json answersJsonFile;
     json requestsJsonFile;
 
 public:
     ConverterJSON() = default;
 
-    std::vector<std::string> GetTextDocuments() {
-        std::vector<std::string> documents;
-        std::ifstream configFile(configJsonPath,std::ios::in);
+  std::vector<std::string> GetTextDocuments() {
+    std::vector<std::string> documents;
+    
+    std::ifstream configFile(configJsonPath);
 
-        if (!configFile.is_open()) {
-            throw OpeningError(configJsonPath);
-        }
-
-        json config;
-        configFile >> config;
-
-        if (config.empty()) {
-            throw OpeningError(requestsJsonPath);
-        }
-
-        for (const auto& doc : config["files"]) {
-            documents.push_back(doc.get<std::string>());
-        }
-
-        return documents;
+    if (!configFile.is_open()) {
+        throw OpeningError(configJsonPath);
     }
+
+    json config;
+    configFile >> config;
+
+    if (config.empty()) {
+        throw OpeningError(configJsonPath);
+    }
+
+    for (const auto& doc : config["files"]) {
+        documents.push_back(doc.get<std::string>());
+    }
+
+    return documents;
+}
 
 
     int GetResponsesLimit() {
@@ -109,23 +111,32 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
             strI += "0";
         }
         strI += std::to_string(i + 1);
-        answersJsonFile["answers"]["request" + strI].clear();
 
+        json answerObj;
         if (answers[i].empty()) {
-            answersJsonFile["answers"]["request" + strI]["result"] = "false";
+            answerObj["result"] = "false";
         } else {
-            answersJsonFile["answers"]["request" + strI]["result"] = "true";
+            answerObj["result"] = "true";
+            json relevanceArray = json::array();  // Use a JSON array for relevance
             for (int j = 0; j < answers[i].size(); j++) {
-                json::value_type block;
+                json block;
                 block["docid"] = answers[i][j].first;
                 block["rank"] = answers[i][j].second;
-                answersJsonFile["answers"]["request" + strI]["relevance"].push_back(block);
+                relevanceArray.push_back(block);
             }
+            answerObj["relevance"] = relevanceArray;
         }
+
+        // Append to the existing JSON file
+        answersJsonFile["answers"]["request" + strI] = answerObj;
+
+        // No need to write to the file after each iteration
     }
-    std::ofstream ofstreamJsonFile(answersJsonPath);
+
+    // Write to the file after the loop
+    std::ofstream ofstreamJsonFile(answersJsonPath, std::ios::trunc);
     ofstreamJsonFile << std::setw(4) << answersJsonFile;
     ofstreamJsonFile.close();
-   }
-  
+}
+ 
  };
