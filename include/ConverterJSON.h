@@ -75,6 +75,7 @@ public:
         return documents;
     }
 
+
     int GetResponsesLimit() {
         std::ifstream configFile(configJsonPath);
         json config;
@@ -99,28 +100,32 @@ public:
             throw JsonFileContainingError(requestsJsonPath, "requests");
         }
     }
+
+
 void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
-        for (int i = 0; i < answers.size(); i++) {
-            std::string strI = "";
-            for (int n = 0; n < 3 - std::to_string(i).length(); n++) {
-                strI += "0";
+    for (int i = 0; i < answers.size(); i++) {
+        std::string strI = "";
+        for (int n = 0; n < 3 - std::to_string(i).length(); n++) {
+            strI += "0";
+        }
+        strI += std::to_string(i + 1);
+        answersJsonFile["answers"]["request" + strI].clear();
+
+        if (answers[i].empty()) {
+            answersJsonFile["answers"]["request" + strI]["result"] = "false";
+        } else {
+            answersJsonFile["answers"]["request" + strI]["result"] = "true";
+            for (int j = 0; j < answers[i].size(); j++) {
+                json::value_type block;
+                block["docid"] = answers[i][j].first;
+                block["rank"] = answers[i][j].second;
+                answersJsonFile["answers"]["request" + strI]["relevance"].push_back(block);
             }
-            strI += std::to_string(i + 1);
-            if (answers[i].empty()){
-                answersJsonFile["answers"]["request" + strI]["result"] = "false";
-            }else{
-             answersJsonFile["answers"]["request" + strI]["result"] = "true";
-                for (int j = 0; j < answers[i].size(); j++) {
-                    json::value_type block;
-                    block["docid"] = answers[i][j].first;
-                    block["rank"] = answers[i][j].second;
-                    answersJsonFile["answers"]["request" + strI]["relevance"].push_back(block);
-                }
-            }
-            std::ofstream ofstreamJsonFile(answersJsonPath);
-            ofstreamJsonFile <<std::setw(4)<< answersJsonFile;
-            ofstreamJsonFile.close();
         }
     }
+    std::ofstream ofstreamJsonFile(answersJsonPath);
+    ofstreamJsonFile << std::setw(4) << answersJsonFile;
+    ofstreamJsonFile.close();
+}
   
  };

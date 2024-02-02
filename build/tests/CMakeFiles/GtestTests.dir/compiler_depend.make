@@ -320,8 +320,6 @@ tests/CMakeFiles/GtestTests.dir/ConverterJSON_test.cpp.obj: C:/Users/HP/OneDrive
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -686,7 +684,6 @@ tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj: C:/Users/HP/OneDrive
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -1414,9 +1411,7 @@ tests/CMakeFiles/GtestTests.dir/__/src/ConverterJSON.cpp.obj: C:/Users/HP/OneDri
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h
 
 tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/InvertedIndex.cpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
@@ -1737,8 +1732,7 @@ tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj: C:/Users/HP/OneDri
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h
+  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h
 
 tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/SearchEngine.cpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
@@ -2745,8 +2739,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc:
 
-C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h:
-
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant:
 
 _deps/googletest-src/googletest/include/gtest/gtest.h:
@@ -2794,6 +2786,8 @@ _deps/googletest-src/googletest/include/gtest/gtest_prod.h:
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/InvertedIndex_test.cpp:
 
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/tests/SearchEngine_test.cpp:
+
+C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h:
 
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/ConverterJSON.cpp:
 
