@@ -21,6 +21,9 @@ void performSearch(InvertedIndex& inv, ConverterJSON& conv) {
 
         // Update answers
         conv.putAnswers(readyResults);
+    }catch (const std::bad_alloc& e) {
+    std::cerr << "Out of memory: " << e.what() << std::endl;
+    exit(EXIT_FAILURE);
 
     } catch (OpeningError ex) {
         std::cerr << ex.what() << std::endl;

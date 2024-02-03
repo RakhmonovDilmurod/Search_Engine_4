@@ -45,9 +45,9 @@ public:
 class ConverterJSON {
 public:
 
-  const std::string configJsonPath   = "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/config/config.json";
-  const std::string requestsJsonPath = "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/config/requests.json";
-  const std::string answersJsonPath  = "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/config/answers.json";
+  const std::string configJsonPath   = "config/config.json";
+  const std::string requestsJsonPath = "config/requests.json";
+  const std::string answersJsonPath  = "config/answers.json";
     json answersJsonFile;
     json requestsJsonFile;
 
