@@ -131,7 +131,7 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
 
     }
 
-    // Write to the file after the loop
+   
     std::ofstream ofstreamJsonFile(answersJsonPath, std::ios::trunc);
     ofstreamJsonFile << std::setw(4) << answersJsonFile;
     ofstreamJsonFile.close();
