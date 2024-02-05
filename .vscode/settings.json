@@ -3,6 +3,7 @@
     "files.associations": {
         "utility": "cpp",
         "cmath": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "xstring": "cpp"
     }
 }
