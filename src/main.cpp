@@ -30,7 +30,7 @@ void performSearch(InvertedIndex& inv, ConverterJSON& conv) {
     }
 }
 
-int main(int argc, char** argv) {
+int main() {
     ConverterJSON conv;
     InvertedIndex inv;
 
