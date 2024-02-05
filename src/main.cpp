@@ -2,6 +2,7 @@
 #include "ConverterJSON.h"
 #include "InvertedIndex.h"
 #include "SearchEngine.h"
+#include <vector>
 
 void performSearch(InvertedIndex& inv, ConverterJSON& conv) {
     try {
