@@ -1,6 +1,6 @@
 {
     "config": {
-                "name": "search_engine_4",
+                "name": "SearchEngine",
                 "version": "0.1",
                 "max_responses": 5
  },
