@@ -127,10 +127,8 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
             answerObj["relevance"] = relevanceArray;
         }
 
-        // Append to the existing JSON file
         answersJsonFile["answers"]["request" + strI] = answerObj;
 
-        // No need to write to the file after each iteration
     }
 
     // Write to the file after the loop
