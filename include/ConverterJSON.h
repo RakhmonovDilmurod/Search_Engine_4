@@ -105,6 +105,7 @@ public:
 
 
 void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
+    std::ofstream ofstreamJsonFile(answersJsonPath, std::ios::app); 
     for (int i = 0; i < answers.size(); i++) {
         std::string strI = "";
         for (int n = 0; n < 3 - std::to_string(i).length(); n++) {
@@ -131,8 +132,6 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
 
     }
 
-   
-    std::ofstream ofstreamJsonFile(answersJsonPath, std::ios::trunc);
     ofstreamJsonFile << std::setw(4) << answersJsonFile;
     ofstreamJsonFile.close();
 }
