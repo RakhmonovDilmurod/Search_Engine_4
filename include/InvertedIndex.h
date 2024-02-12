@@ -27,26 +27,36 @@ public:
     InvertedIndex() = default;
 
    void UpdateDocumentBase(std::vector<std::string> input_docs) {
-    docs.clear();
-    freq_dictionary.clear();
-
-    for (size_t doc_id = 0; doc_id < input_docs.size(); ++doc_id) {
-        const std::string& document_content = input_docs[doc_id];
-        docs.push_back(document_content);
-        std::istringstream iss(document_content);
-        std::string word;
-        while (iss >> word) {
-            freq_dictionary[word].push_back({doc_id, 1});
+       docs.clear();
+       freq_dictionary.clear();
+       for (size_t doc_id = 0; doc_id < input_docs.size(); ++doc_id) {
+           const std::string& document_content = input_docs[doc_id];
+           docs.push_back(document_content);
+           std::istringstream iss(document_content);
+           std::string word;
+           while (iss >> word) {
+               auto it = freq_dictionary.find(word);
+               if (it != freq_dictionary.end()) {
+                   for (auto& entry : it->second) {
+                       if (entry.doc_id == doc_id) {
+                           entry.count++;
+                           break;
+                       }
+                    }
+                } else {
+                   freq_dictionary[word] = { {doc_id, 1} };
+            }
         }
     }
 }
 
-    std::vector<Entry> GetWordCount(const std::string& word){
-        std::vector<Entry> result;
-    auto it = freq_dictionary.find(word);
-        if (it != freq_dictionary.end()) {
-            result = it->second; } 
-    return result;
+    std::vector<Entry> GetWordCount(const std::string& word) {
+       std::vector<Entry> result;
+       auto it = freq_dictionary.find(word);
+       if (it != freq_dictionary.end()) {
+           result = it->second;
+    }
+       return result;
 }
 
     auto getFreqDictionary() {
