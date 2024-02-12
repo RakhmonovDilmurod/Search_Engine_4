@@ -684,6 +684,15 @@ tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj: C:/Users/HP/OneDrive
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
+  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -698,14 +707,6 @@ tests/CMakeFiles/GtestTests.dir/InvertedIndex_test.cpp.obj: C:/Users/HP/OneDrive
   C:/mingw64/x86_64-w64-mingw32/include/direct.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/condition_variable \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
-  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant \
   _deps/googletest-src/googletest/include/gtest/gtest-death-test.h \
@@ -1049,6 +1050,15 @@ tests/CMakeFiles/GtestTests.dir/SearchEngine_test.cpp.obj: C:/Users/HP/OneDrive/
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
+  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
   _deps/googletest-src/googletest/include/gtest/gtest.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
@@ -1063,14 +1073,6 @@ tests/CMakeFiles/GtestTests.dir/SearchEngine_test.cpp.obj: C:/Users/HP/OneDrive/
   C:/mingw64/x86_64-w64-mingw32/include/direct.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/condition_variable \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
-  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/variant \
   _deps/googletest-src/googletest/include/gtest/gtest-death-test.h \
@@ -1732,7 +1734,16 @@ tests/CMakeFiles/GtestTests.dir/__/src/InvertedIndex.cpp.obj: C:/Users/HP/OneDri
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h
+  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
+  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h
 
 tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/SearchEngine.cpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
@@ -2054,7 +2065,16 @@ tests/CMakeFiles/GtestTests.dir/__/src/SearchEngine.cpp.obj: C:/Users/HP/OneDriv
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h
+  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_thread.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/semaphore \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
+  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h
 
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_iterator_base_types.h:
@@ -2352,6 +2372,8 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/special_function_ut
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_pair.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/predefined_ops.h:
 

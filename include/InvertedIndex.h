@@ -11,7 +11,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include "ConverterJSON.h"
-
+#include <thread>
 
 
 struct Entry {
@@ -28,32 +28,34 @@ public:
     InvertedIndex() = default;
     std::vector<std::string> docs = conv.GetTextDocuments(); // список содержимого документов
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
-
+ 
     
-   void UpdateDocumentBase(std::vector<std::string> input_docs) {
-    freq_dictionary.clear();
-    size_t doc_id = docs.size();
-    for (const std::string& document_content : input_docs) {
-        docs.push_back(document_content);
-        std::istringstream iss(document_content);
-        std::string word;
-        while (iss >> word) {
-            auto it = freq_dictionary.find(word);
-            if (it != freq_dictionary.end()) {
-                for (auto& entry : it->second) {
-                    if (entry.doc_id == doc_id) {
-                        entry.count++;
-                        break;
+ void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
+        docs.clear();
+        freq_dictionary.clear();
+        size_t doc_id = 0;
+        std::vector<std::thread> threads;
+        for (const auto& doc_content : input_docs) {
+            threads.emplace_back([this, doc_content, doc_id]() {
+                std::istringstream iss(doc_content);
+                std::string word;
+                while (iss >> word) {
+                    auto& entry_list = freq_dictionary[word];
+                    auto it = std::find_if(entry_list.begin(), entry_list.end(),
+                                           [doc_id](const Entry& entry) { return entry.doc_id == doc_id; });
+                    if (it != entry_list.end()) {
+                        it->count++;
+                    } else {
+                        entry_list.push_back({doc_id, 1});
                     }
                 }
-            } else {
-                freq_dictionary[word] = { {doc_id, 1} };
-            }
+            });
+            doc_id++;
         }
-        doc_id++;
+        for (auto& thread : threads) {
+            thread.join();
+        }
     }
-}
-
     auto getFreqDictionary() {
         return freq_dictionary;
 }
