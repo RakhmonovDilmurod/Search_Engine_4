@@ -24,9 +24,9 @@ struct Entry {
 };
 class InvertedIndex {
 public:
-    ConverterJSON conv;
+
     InvertedIndex() = default;
-    std::vector<std::string> docs = conv.GetTextDocuments(); // список содержимого документов
+    std::vector<std::string> docs; // список содержимого документов
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
  
     
