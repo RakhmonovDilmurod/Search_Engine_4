@@ -61,7 +61,9 @@ void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
 std::vector<Entry> GetWordCount(const std::string& word) const{
     std::vector<Entry> result;
     std::string lowercase_word = word;
-    std::transform(lowercase_word.begin(), lowercase_word.end(), lowercase_word.begin(), ::tolower);
+    for (int i = 0; i < lowercase_word.size(); ++i) {
+    lowercase_word[i] = std::tolower(lowercase_word[i]);
+}
     auto it = freq_dictionary.find(lowercase_word);
     if (it != freq_dictionary.end()) {
         result = it->second;
