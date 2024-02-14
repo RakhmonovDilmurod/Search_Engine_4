@@ -30,42 +30,43 @@ public:
     std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
  
     
- void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
-        docs.clear();
-        freq_dictionary.clear();
-        size_t doc_id = 0;
-        std::vector<std::thread> threads;
-        for (const auto& doc_content : input_docs) {
-            threads.emplace_back([this, doc_content, doc_id]() {
-                std::istringstream iss(doc_content);
-                std::string word;
-                while (iss >> word) {
-                    auto& entry_list = freq_dictionary[word];
-                    auto it = std::find_if(entry_list.begin(), entry_list.end(),
-                                           [doc_id](const Entry& entry) { return entry.doc_id == doc_id; });
-                    if (it != entry_list.end()) {
-                        it->count++;
-                    } else {
-                        entry_list.push_back({doc_id, 1});
-                    }
-                }
-            });
-            doc_id++;
-        }
-        for (auto& thread : threads) {
-            thread.join();
-        }
+void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
+    freq_dictionary.clear();
+    size_t doc_id = 0;
+    std::vector<std::thread> threads;
+    for (const auto& doc_content : input_docs) {
+        threads.emplace_back([this, doc_content, doc_id]() {
+            std::istringstream iss(doc_content);
+            std::string word;
+            std::map<std::string, size_t> word_count;
+            while (iss >> word) {
+                std::transform(word.begin(), word.end(), word.begin(), ::tolower);
+                word_count[word]++;
+            }
+            for (const auto& [word, count] : word_count) {
+                freq_dictionary[word].push_back({doc_id, count});
+            }
+        });
+        doc_id++;
     }
+    for (auto& thread : threads) {
+        thread.join();
+    }
+}
+
     auto getFreqDictionary() {
         return freq_dictionary;
 }
 
-    std::vector<Entry> GetWordCount(const std::string& word) {
-       std::vector<Entry> result;
-       auto it = freq_dictionary.find(word);
-       if (it != freq_dictionary.end()) {
-           result = it->second;
+std::vector<Entry> GetWordCount(const std::string& word) const{
+    std::vector<Entry> result;
+    std::string lowercase_word = word;
+    std::transform(lowercase_word.begin(), lowercase_word.end(), lowercase_word.begin(), ::tolower);
+    auto it = freq_dictionary.find(lowercase_word);
+    if (it != freq_dictionary.end()) {
+        result = it->second;
     }
-       return result;
-  }
+    return result;
+}
+
 };
