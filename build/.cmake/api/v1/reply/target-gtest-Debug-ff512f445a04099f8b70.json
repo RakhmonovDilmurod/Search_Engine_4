@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/libgtest_main.a"
+			"path" : "lib/libgtest.a"
 		}
 	],
 	"backtrace" : 3,
@@ -16,7 +16,6 @@
 			"cxx_library",
 			"install",
 			"install_project",
-			"target_link_libraries",
 			"include_directories",
 			"target_compile_features"
 		],
@@ -34,7 +33,7 @@
 			{
 				"command" : 2,
 				"file" : 1,
-				"line" : 141,
+				"line" : 123,
 				"parent" : 0
 			},
 			{
@@ -62,28 +61,16 @@
 				"parent" : 4
 			},
 			{
-				"command" : 5,
-				"file" : 1,
-				"line" : 153,
-				"parent" : 0
-			},
-			{
 				"file" : 2
 			},
 			{
-				"command" : 6,
+				"command" : 5,
 				"file" : 2,
 				"line" : 13,
-				"parent" : 7
+				"parent" : 6
 			},
 			{
 				"command" : 6,
-				"file" : 1,
-				"line" : 113,
-				"parent" : 0
-			},
-			{
-				"command" : 7,
 				"file" : 0,
 				"line" : 198,
 				"parent" : 2
@@ -105,17 +92,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 8,
-					"path" : "/include"
-				},
-				{
-					"backtrace" : 9,
-					"isSystem" : true,
+					"backtrace" : 7,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include"
 				},
 				{
-					"backtrace" : 9,
-					"isSystem" : true,
+					"backtrace" : 7,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest"
 				}
 			],
@@ -124,7 +105,7 @@
 			{
 				"backtraces" : 
 				[
-					10
+					8
 				],
 				"standard" : "20"
 			},
@@ -134,14 +115,7 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 6,
-			"id" : "gtest::@1ea2dfc0605fe3ab2a3f"
-		}
-	],
-	"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f",
+	"id" : "gtest::@1ea2dfc0605fe3ab2a3f",
 	"install" : 
 	{
 		"destinations" : 
@@ -156,8 +130,8 @@
 			"path" : "C:/Program Files (x86)/Search_Engine_4"
 		}
 	},
-	"name" : "gtest_main",
-	"nameOnDisk" : "libgtest_main.a",
+	"name" : "gtest",
+	"nameOnDisk" : "libgtest.a",
 	"paths" : 
 	{
 		"build" : "_deps/googletest-build/googletest",
@@ -178,7 +152,7 @@
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "build/_deps/googletest-src/googletest/src/gtest_main.cc",
+			"path" : "build/_deps/googletest-src/googletest/src/gtest-all.cc",
 			"sourceGroupIndex" : 0
 		}
 	],
