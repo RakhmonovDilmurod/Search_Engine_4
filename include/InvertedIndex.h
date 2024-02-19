@@ -28,8 +28,8 @@ class InvertedIndex {
 public:
 
     InvertedIndex() = default;
-    std::vector<std::string> docs; // список содержимого документов
-    std::map<std::string, std::vector<Entry>> freq_dictionary; // частотный словарь
+    vector<string> docs; // список содержимого документов
+    map<string,vector<Entry>> freq_dictionary; // частотный словарь
     
     
  void UpdateDocumentBase(const vector<string>& input_docs) {
