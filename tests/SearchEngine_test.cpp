@@ -2,7 +2,7 @@
 #include "../include/InvertedIndex.h"
 #include "gtest/gtest.h"
 
- TEST(SearchServer,search) {
+TEST(SearchServer, search) {
     // Initialize an InvertedIndex with some documents
     InvertedIndex index;
     std::vector<std::string> docs = {
@@ -29,18 +29,18 @@
 
     // Check the results
     std::vector<RelativeIndex> expected1 = {
-        {0, {0, 2}},
-        {3, {3, 2}}
+        {0, 2},
+        {3, 2}
     };
     EXPECT_EQ(results[0], expected1);
 
     std::vector<RelativeIndex> expected2 = {
-        {1, {1, 2}}
+        {1, 2}
     };
     EXPECT_EQ(results[1], expected2);
 
     std::vector<RelativeIndex> expected3 = {
-        {2, {2, 2}}
+        {2, 2}
     };
     EXPECT_EQ(results[2], expected3);
 

@@ -5,22 +5,21 @@
 #include <vector>
 
 int main() {
-     ConverterJSON conv;
-    std::map<std::string, std::vector<Entry>> freqDictionary;
+    ConverterJSON conv;
     std::vector<std::string> texts;
     std::vector<std::string> requests;
     InvertedIndex inv;
     inv.UpdateDocumentBase(conv.GetTextDocuments());
     try {
         SearchServer searchSer(inv);
-        searchSer.search(searchSer.requestsInput());
         texts = conv.GetTextDocuments();
         requests = conv.GetRequests();
+        
         std::vector<std::vector<std::pair<int, float>>> readyResults;
         for (const auto& outer : searchSer.search(requests)) {
             std::vector<std::pair<int, float>> innerReady;
             for (const auto& relIndex : outer) {
-                innerReady.emplace_back(static_cast<int>(relIndex.doc_id), static_cast<float>(relIndex.rank.count));
+                innerReady.emplace_back(static_cast<int>(relIndex.doc_id), relIndex.rank);
             }
             readyResults.push_back(innerReady);
         }
@@ -34,4 +33,5 @@ int main() {
         return 1;
     }
 
+    return 0;
 }

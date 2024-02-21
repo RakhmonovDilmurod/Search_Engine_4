@@ -984,7 +984,10 @@ src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj: C:/Users/HP/OneDrive/Docum
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
-  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h
+  C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h
 
 src/CMakeFiles/SearchEngine.dir/main.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/main.cpp \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
@@ -1317,7 +1320,10 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: C:/Users/HP/OneDrive/Documents/Git
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
   C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
-  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h
+  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h
 
 
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/ConverterJSON.cpp:
@@ -1519,6 +1525,8 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/auto_ptr.h:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/pthread.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sys/types.h:
 
@@ -1922,6 +1930,8 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_noni
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h:
 
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h:
@@ -1989,3 +1999,5 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h:
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/SearchEngine.cpp:
 
 C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set:
