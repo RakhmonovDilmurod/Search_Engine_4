@@ -32,43 +32,33 @@ public:
     map<string,vector<Entry>> freq_dictionary; // частотный словарь
     
     
- void UpdateDocumentBase(const vector<string>& input_docs){
+ void UpdateDocumentBase(const vector<string>& input_docs) {
         freq_dictionary.clear();
         docs.clear();
-        std::vector<std::thread> threads;
-        std::mutex mtx;
         size_t doc_id = 0;
         for (const auto& doc_content : input_docs) {
-            threads.emplace_back([&](const std::string& doc_content, size_t id) {
-                std::istringstream iss(doc_content);
-                std::string word;
-                std::map<std::string, size_t> word_count;
-                while (iss >> word) {
-                    std::transform(word.begin(), word.end(), word.begin(), ::tolower);
-                    word_count[word]++;
+            std::istringstream iss(doc_content);
+            std::string word;
+            std::map<std::string, size_t> word_count;
+            while (iss >> word) {
+                std::transform(word.begin(), word.end(), word.begin(), ::tolower);
+                word_count[word]++;
+            }
+            for (const auto& [word, count] : word_count) {
+                auto& entry_list = freq_dictionary[word];
+                auto it = std::find_if(entry_list.begin(), entry_list.end(),
+                    [&](const Entry& entry) { return entry.doc_id == doc_id; });
+                if (it != entry_list.end()) {
+                    it->count += count;
+                } else {
+                    entry_list.push_back({doc_id, count});
                 }
-                {
-                    std::lock_guard<std::mutex> lock(mtx);
-                    for (const auto& [word, count] : word_count) {
-                        auto& entry_list = freq_dictionary[word];
-                        auto it = std::find_if(entry_list.begin(), entry_list.end(),
-                            [&](const Entry& entry) { return entry.doc_id == id; });
-                        if (it != entry_list.end()) {
-                            it->count += count;
-                        } else {
-                            entry_list.push_back({id, count});
-                        }
-                    }
-                    docs.push_back(doc_content);
-                }
-            }, doc_content, doc_id);
+            }
+            docs.push_back(doc_content);
             ++doc_id;
         }
-
-        for (auto& thread : threads) {
-            thread.join();
-        }
     }
+
 
     auto getFreqDictionary() {
         return freq_dictionary;
