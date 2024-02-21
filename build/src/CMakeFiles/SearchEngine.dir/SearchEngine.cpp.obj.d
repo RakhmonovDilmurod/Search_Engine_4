@@ -320,6 +320,8 @@ src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/ConverterJSON.h \
  C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/thread \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/stop_token \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
@@ -328,6 +330,4 @@ src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj: \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/semaphore_base.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_timed_wait.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
- C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h
+ C:/mingw64/x86_64-w64-mingw32/include/semaphore.h

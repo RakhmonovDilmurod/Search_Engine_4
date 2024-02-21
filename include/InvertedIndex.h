@@ -1,81 +1,88 @@
 #pragma once
 #include <iostream>
-#include <nlohmann/json.hpp>
-#include <fstream>
 #include <vector>
-#include <cstdlib>
 #include <map>
 #include <string>
 #include <algorithm>
 #include <sstream>
-#include <unordered_map>
-#include <unordered_set>
-#include "ConverterJSON.h"
-#include <thread>
 #include <mutex>
+#include <thread>
 
-using namespace std;
-
-struct Entry {
+struct Entry{
     size_t doc_id, count;
-    // Данный оператор необходим для проведения тестовых сценариев
+
     bool operator ==(const Entry& other) const {
-        return (doc_id == other.doc_id &&
-                count == other.count);
+        return (doc_id == other.doc_id && count == other.count);
     }
 }; 
 
 class InvertedIndex {
 public:
-
     InvertedIndex() = default;
-    vector<string> docs; // список содержимого документов
-    map<string,vector<Entry>> freq_dictionary; // частотный словарь
+
+    std::vector<std::string> docs;
+    std::map<std::string,std::vector<Entry>> freq_dictionary;
     
-    
- void UpdateDocumentBase(const vector<string>& input_docs) {
-        freq_dictionary.clear();
-        docs.clear();
 
-        for (size_t doc_id = 0; doc_id < input_docs.size(); ++doc_id) {
-            const auto& doc_content = input_docs[doc_id];
-            std::istringstream iss(doc_content);
-            std::string word;
-            std::map<std::string, size_t> word_count;
+    std::string wordCleaning(std::string word) {
+        while ((word.back() >= ' ' && word.back() <= '/') || (word.back() >= ':' && word.back() <= '@')
+               || (word.back() >= '[' && word.back() <= '`') || (word.back() >= '{' && word.back() <= '~')) {
+            word.erase(word.end() - 1);
+        }
+        while ((word.front() >= ' ' && word.front() <= '/') || (word.front() >= ':' && word.front() <= '@')
+               || (word.front() >= '[' && word.front() <= '`') || (word.front() >= '{' && word.front() <= '~')) {
+            word.erase(0, 1);
+        }
+        return word;
+    }    
 
-            while (iss >> word) {
-                std::transform(word.begin(), word.end(), word.begin(), ::tolower);
-                ++word_count[word];
+    void convertDocumenttoDatabase(const std::string& txt, size_t num) {
+        std::mutex freqAccess;
+        std::map<std::string,size_t> words;
+        std::istringstream iss(txt);
+        std::string buf;
+        while (!iss.eof()) {
+            iss >> buf;
+            buf = wordCleaning(buf);
+            if (words.count(buf) == 0) {
+                words.insert(std::pair<std::string,size_t>(buf, 1));
+            } else {
+                words[buf] += 1;
             }
-
-            for (const auto& [word, count] : word_count) {
-                auto& entry_list = freq_dictionary[word];
-                auto it = std::find_if(entry_list.begin(), entry_list.end(),
-                    [&](const Entry& entry) { return entry.doc_id == doc_id; });
-
-                if (it != entry_list.end()) {
-                    it->count += count;
-                } else {
-                    entry_list.push_back({doc_id, count});
-                }
+        }
+        for (auto & word : words) {
+            freqAccess.lock();
+            if (freq_dictionary.count(word.first) == 0) {
+                freq_dictionary[word.first] = std::vector<Entry>{Entry{num, word.second}};
+            } else {
+                freq_dictionary[word.first].push_back(Entry{num, word.second});
             }
-            docs.push_back(doc_content);
+            freqAccess.unlock();
+        }
+    }   
+ 
+    void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
+        docs = input_docs;
+        std::vector<std::thread> threads;
+        for (int i = 0; i < input_docs.size(); i++) {
+            threads.emplace_back(&InvertedIndex::convertDocumenttoDatabase, this, docs[i], i);
+        }
+        for (int i = 0; i < input_docs.size(); i++) {
+            threads[i].join();
         }
     }
 
-
     auto getFreqDictionary() {
         return freq_dictionary;
-}
+    }
 
-vector<Entry> GetWordCount(const string& word) const {
-        string lowercase_word = word;
-        transform(lowercase_word.begin(), lowercase_word.end(), lowercase_word.begin(), ::tolower);
+    std::vector<Entry> GetWordCount(const std::string& word) const {
+        std::string lowercase_word = word;
+        std::transform(lowercase_word.begin(), lowercase_word.end(), lowercase_word.begin(), ::tolower);
         auto it = freq_dictionary.find(lowercase_word);
         if (it != freq_dictionary.end()) {
             return it->second;
         }
         return {};
     }
-
 };

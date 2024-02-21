@@ -5,10 +5,10 @@
                 "max_responses": 5
  },
        "files": [
-                   "../Files/file001.txt",
-                   "../Files/file002.txt",
-                   "../Files/file003.txt",
-                   "../Files/file004.txt"
+                   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Files/file001.txt",
+                   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Files/file002.txt",
+                   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Files/file003.txt",
+                   "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/Files/file004.txt"
               ]
  }
  
