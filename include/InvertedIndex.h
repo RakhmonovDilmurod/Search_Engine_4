@@ -23,7 +23,8 @@ struct Entry {
         return (doc_id == other.doc_id &&
                 count == other.count);
     }
-};
+}; 
+
 class InvertedIndex {
 public:
 
@@ -35,19 +36,23 @@ public:
  void UpdateDocumentBase(const vector<string>& input_docs) {
         freq_dictionary.clear();
         docs.clear();
-        size_t doc_id = 0;
-        for (const auto& doc_content : input_docs) {
+
+        for (size_t doc_id = 0; doc_id < input_docs.size(); ++doc_id) {
+            const auto& doc_content = input_docs[doc_id];
             std::istringstream iss(doc_content);
             std::string word;
             std::map<std::string, size_t> word_count;
+
             while (iss >> word) {
                 std::transform(word.begin(), word.end(), word.begin(), ::tolower);
-                word_count[word]++;
+                ++word_count[word];
             }
+
             for (const auto& [word, count] : word_count) {
                 auto& entry_list = freq_dictionary[word];
                 auto it = std::find_if(entry_list.begin(), entry_list.end(),
                     [&](const Entry& entry) { return entry.doc_id == doc_id; });
+
                 if (it != entry_list.end()) {
                     it->count += count;
                 } else {
@@ -55,7 +60,6 @@ public:
                 }
             }
             docs.push_back(doc_content);
-            ++doc_id;
         }
     }
 
