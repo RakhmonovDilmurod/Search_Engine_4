@@ -118,7 +118,7 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
             answerObj["result"] = "false";
         } else {
             answerObj["result"] = "true";
-            json relevanceArray = json::array();  // Use a JSON array for relevance
+            json relevanceArray = json::array();  
             for (int j = 0; j < answers[i].size(); j++) {
                 json block;
                 block["docid"] = answers[i][j].first;
