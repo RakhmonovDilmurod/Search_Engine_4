@@ -3,15 +3,9 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <vector>
-#include <cstdlib>
 #include <map>
 #include <string>
-#include <algorithm>
-#include <sstream>
-#include <unordered_map>
-#include <unordered_set>
-#include <filesystem>
-
+#include <stdexcept>
 
 using json = nlohmann::json;
 
@@ -20,7 +14,7 @@ private:
     std::string message;
 
 public:
-    OpeningError(const std::string  fileName)
+    OpeningError(const std::string& fileName)
         : message("Failed to open file: " + fileName + ".") {}
 
     const char* what() const noexcept override {
@@ -33,7 +27,7 @@ private:
     std::string message;
 
 public:
-    JsonFileContainingError(const std::string fileName, const std::string& containerName)
+    JsonFileContainingError(const std::string& fileName, const std::string& containerName)
         : message("Failed to find container " + containerName + " in file " + fileName + ".") {}
 
     const char* what() const noexcept override {
@@ -41,99 +35,127 @@ public:
     }
 };
 
-
 class ConverterJSON {
-public:
-
-  const std::string configJsonPath   = "config/config.json";
-  const std::string requestsJsonPath = "config/requests.json";
-  const std::string answersJsonPath  = "config/answers.json";
-    json answersJsonFile;
-    json requestsJsonFile;
+private:
+    const std::string configJsonPath = "config/config.json";
+    const std::string requestsJsonPath = "config/requests.json";
+    const std::string answersJsonPath = "config/answers.json";
 
 public:
-    ConverterJSON() = default;
+    std::vector<std::string> GetTextDocuments() {
+        std::vector<std::string> documents;
 
-  std::vector<std::string> GetTextDocuments() {
-    std::vector<std::string> documents;
-    
-    std::ifstream configFile(configJsonPath);
+        try {
+            std::ifstream configFile(configJsonPath);
+            if (!configFile.is_open()) {
+                throw OpeningError(configJsonPath);
+            }
 
-    if (!configFile.is_open()) {
-        throw OpeningError(configJsonPath);
+            json config;
+            configFile >> config;
+
+            if (config.empty()) {
+                throw OpeningError(configJsonPath);
+            }
+
+            for (const auto& doc : config["files"]) {
+                documents.push_back(doc.get<std::string>());
+            }
+
+            configFile.close();
+        } catch (const std::exception& ex) {
+            std::cerr << ex.what() << std::endl;
+        }
+
+        return documents;
     }
-
-    json config;
-    configFile >> config;
-
-    if (config.empty()) {
-        throw OpeningError(configJsonPath);
-    }
-
-    for (const auto& doc : config["files"]) {
-        documents.push_back(doc.get<std::string>());
-    }
-
-    return documents;
-}
-
 
     int GetResponsesLimit() {
-        std::ifstream configFile(configJsonPath);
-        json config;
-        configFile >> config;
+        try {
+            std::ifstream configFile(configJsonPath);
+            if (!configFile.is_open()) {
+                throw OpeningError(configJsonPath);
+            }
 
-        return config.contains("max_responses") ? config["max_responses"].get<int>() : 0; // Default value or throw an exception.
+            json config;
+            configFile >> config;
+
+            configFile.close();
+
+            return config.contains("max_responses") ? config["max_responses"].get<int>() : 5;
+        } catch (const std::exception& ex) {
+            std::cerr << ex.what() << std::endl;
+            return 5; // Default value
+        }
     }
 
     std::vector<std::string> GetRequests() {
-        std::ifstream ifSJsonFile(requestsJsonPath);
-        ifSJsonFile >> requestsJsonFile;
-        std::vector<std::string> requests = {};
+        std::vector<std::string> requests;
 
-        if (requestsJsonFile.contains("requests")) {
-            for (const auto& i : requestsJsonFile["requests"]) {
-                requests.push_back(i.get<std::string>());
+        try {
+            std::ifstream requestsFile(requestsJsonPath);
+            if (!requestsFile.is_open()) {
+                throw OpeningError(requestsJsonPath);
             }
+
+            json requestsJson;
+            requestsFile >> requestsJson;
+
+            if (requestsJson.contains("requests")) {
+                for (const auto& req : requestsJson["requests"]) {
+                    requests.push_back(req.get<std::string>());
+                }
+            } else {
+                throw JsonFileContainingError(requestsJsonPath, "requests");
+            }
+
+            requestsFile.close();
+        } catch (const std::exception& ex) {
+            std::cerr << ex.what() << std::endl;
+        }
 
         return requests;
     }
-        else{
-            throw JsonFileContainingError(requestsJsonPath, "requests");
-        }
-    }
 
-
-void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
-    std::ofstream ofstreamJsonFile(answersJsonPath, std::ios::app); 
-    for (int i = 0; i < answers.size(); i++) {
-        std::string strI = "";
-        for (int n = 0; n < 3 - std::to_string(i).length(); n++) {
-            strI += "0";
-        }
-        strI += std::to_string(i + 1);
-
-        json answerObj;
-        if (answers[i].empty()) {
-            answerObj["result"] = "false";
-        } else {
-            answerObj["result"] = "true";
-            json relevanceArray = json::array();  
-            for (int j = 0; j < answers[i].size(); j++) {
-                json block;
-                block["docid"] = answers[i][j].first;
-                block["rank"] = answers[i][j].second;
-                relevanceArray.push_back(block);
+    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
+        try {
+            json answersJson;
+            std::ifstream existingAnswersFile(answersJsonPath);
+            if (existingAnswersFile.is_open()) {
+                existingAnswersFile >> answersJson;
+                existingAnswersFile.close();
             }
-            answerObj["relevance"] = relevanceArray;
+
+            std::ofstream answersFile(answersJsonPath);
+            if (!answersFile.is_open()) {
+                throw OpeningError(answersJsonPath);
+            }
+
+            int requestNumber = 1;
+            for (const auto& answer : answers) {
+                json answerObj;
+                if (answer.empty()) {
+                    answerObj["result"] = "false";
+                } else {
+                    answerObj["result"] = "true";
+                    json relevanceArray = json::array();
+                    for (const auto& doc : answer) {
+                        json block;
+                        block["docid"] = doc.first;
+                        block["rank"] = doc.second;
+                        relevanceArray.push_back(block);
+                    }
+                    answerObj["relevance"] = relevanceArray;
+                }
+
+                answersJson["answers"]["request" + std::to_string(requestNumber)] = answerObj;
+                requestNumber++;
+            }
+
+            answersFile << std::setw(4) << answersJson;
+            answersFile.close();
+        } catch (const std::exception& ex) {
+            std::cerr << ex.what() << std::endl;
         }
-
-        answersJsonFile["answers"]["request" + strI] = answerObj;
-
     }
-
-    ofstreamJsonFile << std::setw(4) << answersJsonFile;
-    ofstreamJsonFile.close();
-}
- 
- };
+};

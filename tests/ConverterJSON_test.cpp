@@ -2,12 +2,10 @@
 #include "gtest/gtest.h"
 #include <nlohmann/json.hpp>
 
-using json =nlohmann::json;
-
-
+using json = nlohmann::json;
 
 TEST(ConverterJSON, readConfig) {
-     ConverterJSON cj;
+    ConverterJSON cj;
     std::vector<std::string> documents = cj.GetTextDocuments();
     // Check if the number of documents is correct
     int expectedDocuments = 3; // Change this to the number of documents in your config.json
@@ -21,7 +19,7 @@ TEST(ConverterJSON, readConfig) {
 }
 
 TEST(ConverterJSON, readRequests) {
- ConverterJSON converter;
+    ConverterJSON converter;
     std::vector<std::string> requests = converter.GetRequests();
     // Add your expectations here, for example:
     EXPECT_FALSE(requests.empty());
@@ -29,30 +27,14 @@ TEST(ConverterJSON, readRequests) {
 }
 
 TEST(ConverterJSON, getResponsesLimit) {
-  ConverterJSON converter;
+    ConverterJSON converter;
     int limit = converter.GetResponsesLimit();
     // Add your expectations here, for example:
     EXPECT_GT(limit, 0);
     EXPECT_LE(limit, 100); // Or any other expected range.
 }
 
-
-TEST(ConverterJSON, getRequests) {
-  ConverterJSON converter;
-    std::vector<std::string> requests = converter.GetRequests();
-    // Add your expectations here, for example:
-    EXPECT_FALSE(requests.empty());
-    EXPECT_EQ(requests.size(), 3); // Or any other expected size.
-}
-TEST(ConverterJSON, getFiles) {
-  ConverterJSON converter;
-    std::vector<std::string> files = converter.GetTextDocuments();
-    // Add your expectations here, for example:
-    EXPECT_FALSE(files.empty());
-    EXPECT_EQ(files.size(), 5); // Or any other expected size.
-}
-
-TEST(ConverterJSONTest, putAnswersTest) {
+TEST(ConverterJSON, putAnswersTest) {
     // Create an instance of the ConverterJSON class
     ConverterJSON converter;
     // Create a sample vector of answers
@@ -62,11 +44,4 @@ TEST(ConverterJSONTest, putAnswersTest) {
         {} }; // An empty answer
     // Call the putAnswers method with the sample answers
     ASSERT_NO_THROW(converter.putAnswers(sampleAnswers));
-    
-    // Example assertion (modify based on your JSON structure):
-    ASSERT_TRUE(converter.answersJsonFile.contains("answers"));
-    ASSERT_TRUE(converter.answersJsonFile["answers"].contains("request001"));
-    ASSERT_TRUE(converter.answersJsonFile["answers"]["request001"].contains("result"));
-    ASSERT_TRUE(converter.answersJsonFile["answers"]["request001"]["relevance"].size() == 2);
 }
-

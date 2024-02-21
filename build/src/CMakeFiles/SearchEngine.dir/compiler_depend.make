@@ -317,9 +317,7 @@ src/CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj: C:/Users/HP/OneDrive/Docu
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc
 
 src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/InvertedIndex.cpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
@@ -649,9 +647,7 @@ src/CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj: C:/Users/HP/OneDrive/Docu
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc
 
 src/CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj: C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/src/SearchEngine.cpp \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
@@ -1306,8 +1302,6 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: C:/Users/HP/OneDrive/Documents/Git
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/InvertedIndex.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/mutex \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unique_lock.h \
@@ -1321,6 +1315,8 @@ src/CMakeFiles/SearchEngine.dir/main.cpp.obj: C:/Users/HP/OneDrive/Documents/Git
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/this_thread_sleep.h \
   C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
   C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include/SearchEngine.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h
