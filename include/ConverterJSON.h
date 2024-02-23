@@ -85,7 +85,7 @@ public:
             return config.contains("max_responses") ? config["max_responses"].get<int>() : 5;
         } catch (const std::exception& ex) {
             std::cerr << ex.what() << std::endl;
-            return 5; // Default value
+            return 5;
         }
     }
 
