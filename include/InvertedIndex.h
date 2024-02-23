@@ -7,7 +7,7 @@
 #include <thread>
 #include <string>
 #include "ConverterJSON.h"
-#include <shared_mutex>
+
 
 struct Entry {
     size_t doc_id, count;
@@ -46,7 +46,7 @@ public:
  
 private:
     std::map<std::string, std::vector<Entry>> freq_dictionary;
-    mutable std::shared_mutex mutex_;
+    mutable std::mutex mutex_;
 
     void IndexDocument(const std::string& doc, size_t doc_id) {
         std::map<std::string, size_t> word_count;
@@ -57,7 +57,7 @@ private:
         ++word_count[cleanedWord];
             }
 
-        std::lock_guard<std::shared_mutex> lock(mutex_);
+        std::lock_guard<std::mutex> lock(mutex_);
         for (const auto& [word, count] : word_count) {
             if (freq_dictionary.find(word) == freq_dictionary.end()) {
                 freq_dictionary[word] = {{doc_id, count}};
@@ -79,7 +79,7 @@ private:
 
 public:
     auto getFreqDictionary() const {
-        std::shared_lock<std::shared_mutex> lock(mutex_);
+        std::lock_guard<std::mutex> lock(mutex_);
         return freq_dictionary;
     }
 };
