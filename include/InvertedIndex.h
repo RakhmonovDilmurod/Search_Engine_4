@@ -29,7 +29,9 @@ public:
             threads.emplace_back(&InvertedIndex::IndexDocument, this, input_docs[i], i);
         }
         for (auto& thread : threads) {
+           if (thread.joinable()) {
             thread.join();
+           }
         }
     }
 
