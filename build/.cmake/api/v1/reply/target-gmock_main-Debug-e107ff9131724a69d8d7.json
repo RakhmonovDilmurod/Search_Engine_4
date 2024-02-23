@@ -106,7 +106,13 @@
 			[
 				{
 					"backtrace" : 8,
-					"path" : "/include"
+					"isSystem" : true,
+					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include"
+				},
+				{
+					"backtrace" : 8,
+					"isSystem" : true,
+					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest"
 				},
 				{
 					"backtrace" : 9,
@@ -117,16 +123,6 @@
 					"backtrace" : 9,
 					"isSystem" : true,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googlemock"
-				},
-				{
-					"backtrace" : 9,
-					"isSystem" : true,
-					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include"
-				},
-				{
-					"backtrace" : 9,
-					"isSystem" : true,
-					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest"
 				}
 			],
 			"language" : "CXX",
