@@ -7,7 +7,7 @@
 #include <thread>
 #include <string>
 #include "ConverterJSON.h"
-
+#include <cctype>
 
 struct Entry {
     size_t doc_id, count;
@@ -37,11 +37,13 @@ public:
 
     std::vector<Entry> GetWordCount(const std::string& word) {
         std::mutex mutex_;
-        std::lock_guard<std::mutex> lock(mutex_);
+        mutex_.lock();
         if (freq_dictionary.find(word) != freq_dictionary.end()) {
             return freq_dictionary[word];
         }
+        mutex_.unlock();
         return {};
+       
     }
  
 private:
@@ -58,6 +60,7 @@ private:
             }
 
         std::lock_guard<std::mutex> lock(mutex_);
+        mutex_.lock();
         for (const auto& [word, count] : word_count) {
             if (freq_dictionary.find(word) == freq_dictionary.end()) {
                 freq_dictionary[word] = {{doc_id, count}};
@@ -65,6 +68,7 @@ private:
                 freq_dictionary[word].emplace_back(Entry{doc_id, count});
             }
         }
+        mutex_.unlock();
     }
 
     std::string WordCleaning(std::string& word) {
@@ -81,5 +85,6 @@ public:
     auto getFreqDictionary() const {
         std::lock_guard<std::mutex> lock(mutex_);
         return freq_dictionary;
+      
     }
 };

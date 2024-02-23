@@ -8,7 +8,7 @@ set(MY_INCLUDE_DIR
   ${CMAKE_SOURCE_DIR}/include
 )
 set(MY_SRC_DIR ${CMAKE_SOURCE_DIR}/src)
-
+include_directories(${MY_INCLUDE_DIR})
 include(FetchContent)
 
 add_subdirectory(src)

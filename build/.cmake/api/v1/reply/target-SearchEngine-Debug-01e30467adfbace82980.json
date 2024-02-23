@@ -14,12 +14,13 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_include_directories",
+			"include_directories",
 			"target_link_libraries"
 		],
 		"files" : 
 		[
-			"src/CMakeLists.txt"
+			"src/CMakeLists.txt",
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -33,10 +34,13 @@
 				"parent" : 0
 			},
 			{
+				"file" : 1
+			},
+			{
 				"command" : 1,
-				"file" : 0,
-				"line" : 14,
-				"parent" : 0
+				"file" : 1,
+				"line" : 11,
+				"parent" : 2
 			},
 			{
 				"command" : 2,
@@ -58,11 +62,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"path" : "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/nlohmann_json/include"
 				}
 			],
@@ -71,7 +75,7 @@
 			{
 				"backtraces" : 
 				[
-					3
+					4
 				],
 				"standard" : "20"
 			},

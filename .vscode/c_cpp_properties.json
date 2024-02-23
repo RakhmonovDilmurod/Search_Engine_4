@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/build",
-                "${workspaceFolder}/nlohmann_json/include/nlohmann"
+                "${workspaceFolder}/nlohmann_json/include/nlohmann",
+                "${workspaceFolder}/include"
             ],
             "defines": [
                 "_DEBUG",
