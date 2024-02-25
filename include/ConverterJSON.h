@@ -43,7 +43,7 @@ private:
 
 public:
     std::vector<std::string> GetTextDocuments() {
-        std::vector<std::string> documents;
+      std::vector<std::string> documents{};
 
         try {
             std::ifstream configFile(configJsonPath);
@@ -119,14 +119,13 @@ public:
 
     void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
         try {
+            std::ofstream answersFile(answersJsonPath);
             json answersJson;
             std::ifstream existingAnswersFile(answersJsonPath);
             if (existingAnswersFile.is_open()) {
                 existingAnswersFile >> answersJson;
                 existingAnswersFile.close();
             }
-
-            std::ofstream answersFile(answersJsonPath);
             if (!answersFile.is_open()) {
                 throw OpeningError(answersJsonPath);
             }
