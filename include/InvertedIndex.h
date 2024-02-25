@@ -1,10 +1,10 @@
+#include "ConverterJSON.h"
 #pragma once
 #include <iostream>
 #include <vector>
 #include <string>
 #include <map>
 #include <cctype>
-#include "ConverterJSON.h"
 
 struct Entry {
     size_t doc_id, count;
@@ -29,11 +29,10 @@ public:
         if (freq_dictionary.find(word) != freq_dictionary.end()) {
             return freq_dictionary[word];
         }
-        return {};
+        return {}; 
     }
- 
+
 private:
-   
     std::map<std::string, std::vector<Entry>> freq_dictionary;
 
     void IndexDocument(const std::string& doc, size_t doc_id) {
