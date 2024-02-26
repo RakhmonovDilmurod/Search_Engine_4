@@ -67,9 +67,8 @@ public:
             }
             for (int j = 0; j < absoluteRelevance.size(); j++) {
                relativeRelevance.push_back(RelativeIndex{(size_t)j, static_cast<float>(absoluteRelevance[j]) / *std::max_element(absoluteRelevance.begin(), absoluteRelevance.end())});
-            result.push_back(relativeRelevance);
             }
-          
+           result.push_back(relativeRelevance);
           }
           return result;
      }
