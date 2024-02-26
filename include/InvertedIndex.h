@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 #include <cctype>
+#include <mutex>
 
 struct Entry {
     size_t doc_id, count;
@@ -18,13 +19,14 @@ class InvertedIndex {
 public:
     InvertedIndex() = default;
     std::vector<std::string> docs; // Содержимое документов
-    void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
-    if (input_docs.empty()) {
-        return;
-    }
+    void UpdateDocumentBase(const std::vector<std::string>& input_docs)  {
     docs = input_docs;
-    for (size_t i = 0; i < input_docs.size(); ++i) {
-        IndexDocument(input_docs[i], i);
+    std::vector<std::thread> threads = {};
+    for (int i = 0; i < input_docs.size(); i++) {
+        threads.emplace_back(&InvertedIndex::IndexDocument, this, docs[i], i);
+    }
+    for (int i = 0; i < input_docs.size(); i++) {
+        threads[i].join();
     }
 }
 
@@ -38,25 +40,29 @@ public:
 
 private:
     std::map<std::string, std::vector<Entry>> freq_dictionary;
-
-    void IndexDocument(const std::string& doc, size_t doc_id) {
-    if (doc.empty()) {
-        return;
-    }
-    std::map<std::string, size_t> word_count;
+    std::mutex mutex;
+    void IndexDocument(const std::string& doc, size_t doc_id){
+    std::map<std::string,size_t> words;
     std::istringstream iss(doc);
-    std::string word;
-    while (iss >> word) {
-        std::string cleanedWord = WordCleaning(word);
-        ++word_count[cleanedWord];
-    }
-
-    for (const auto& [word, count] : word_count) {
-        if (freq_dictionary.find(word) == freq_dictionary.end()) {
-            freq_dictionary[word] = {{doc_id, count}};
+    std::string buf;
+    while (!iss.eof()){
+        iss >> buf;
+        buf = WordCleaning(buf);
+        if (words.count(buf) == 0){
+            words.insert(std::pair<std::string,size_t>(buf,1));
         } else {
-            freq_dictionary[word].emplace_back(Entry{doc_id, count});
+            words[buf] += 1;
         }
+    }
+    for (auto & word : words) {
+        mutex.lock();
+        if (freq_dictionary.count(word.first) == 0) {
+           freq_dictionary[word.first] = std::vector<Entry>{ Entry{doc_id, word.second} };
+           freq_dictionary[word.first] = {Entry{doc_id, word.second} };;
+        } else {
+            freq_dictionary[word.first].push_back(Entry{doc_id, word.second});
+        }
+        mutex.unlock();
     }
 }
 
@@ -73,5 +79,5 @@ private:
 public:
    const std::map<std::string, std::vector<Entry>>& getFreqDictionary() const {
     return freq_dictionary;
-}
+  }
 };
