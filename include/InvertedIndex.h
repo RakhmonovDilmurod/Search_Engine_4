@@ -27,7 +27,7 @@ public:
     for (int i = 0; i < input_docs.size(); i++) {
         threads.emplace_back([&](int index) {
     std::unique_lock<std::mutex> lock(mutexes[index]);
-    InvertedIndex::IndexDocument(docs[index], index);}, i);
+    InvertedIndex::IndexDocument(input_docs[index], index);}, i);
     }
     for (int i = 0; i < input_docs.size(); i++) {
         threads[i].join();
