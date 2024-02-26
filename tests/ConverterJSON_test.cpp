@@ -23,7 +23,6 @@ TEST(ConverterJSON, readConfig) {
 TEST(ConverterJSON, readRequests) {
     ConverterJSON converter;
     std::vector<std::string> requests = converter.GetRequests();
-    // Add your expectations here, for example:
     EXPECT_FALSE(requests.empty());
     EXPECT_EQ(requests.size(), 3); // Or any other expected size.
 }
