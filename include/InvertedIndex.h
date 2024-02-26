@@ -20,9 +20,12 @@ class InvertedIndex {
 public:
     InvertedIndex() = default;
     std::vector<std::string> docs; // Содержимое документов
-    void UpdateDocumentBase(const std::vector<std::string>& input_docs)  {
+    void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
+    std::mutex mutex;
+    std::unique_lock<std::mutex> lock(mutex);
     docs = input_docs;
     std::vector<std::thread> threads = {};
+    lock.unlock();
     for (int i = 0; i < input_docs.size(); i++) {
         threads.emplace_back(&InvertedIndex::IndexDocument, this, docs[i], i);
     }
@@ -38,11 +41,12 @@ public:
     }
     return {};
 }
-
+   
     std::map<std::string, std::vector<Entry>> freq_dictionary;
  private:   
-   void IndexDocument(const std::string& doc, size_t doc_id){
+   void IndexDocument(const std::string& doc, size_t doc_id){ 
     std::mutex mutex;
+    std::lock_guard<std::mutex> lock(mutex);
     std::map<std::string,size_t> words;
     std::istringstream iss(doc);
     std::string buf;

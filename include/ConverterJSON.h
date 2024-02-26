@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 #include <stdexcept>
+#include <filesystem>
 
 using json = nlohmann::json;
 
@@ -42,26 +43,39 @@ private:
     const std::string answersJsonPath = "config/answers.json";
 
 public:
-    std::vector<std::string> GetTextDocuments(){
-    std::ifstream ifSJsonFile(configJsonPath);
-    json configJsonFile;
-    ifSJsonFile >> configJsonFile;
+    std::vector<std::string> GetTextDocuments() {
     std::vector<std::string> documents;
-    if (configJsonFile.contains("files")) {
-        for (const auto& i: configJsonFile["files"]) {
-            std::string bufPath = i;
-            std::replace(bufPath.begin(), bufPath.end(), '/', '\\');
-            std::ifstream subFile(bufPath);
-            if (subFile.is_open()) {
-                std::ostringstream sstr;
-                sstr << subFile.rdbuf();
-                documents.push_back(sstr.str());
-            } else {
-                throw OpeningError(bufPath);
-            }
+
+    try {
+        std::ifstream ifSJsonFile(configJsonPath);
+        if (!ifSJsonFile.is_open()) {
+            throw OpeningError(configJsonPath);
         }
-    } else {
-        throw JsonFileContainingError(configJsonPath, "files");
+
+        json configJsonFile;
+        ifSJsonFile >> configJsonFile;
+
+        if (configJsonFile.contains("files")) {
+            for (const auto& i : configJsonFile["files"]) {
+                std::filesystem::path bufPath(i); // Replace the line here
+                if (std::filesystem::exists(bufPath)) {
+                    std::ifstream subFile(bufPath);
+                    if (subFile.is_open()) {
+                        std::ostringstream sstr;
+                        sstr << subFile.rdbuf();
+                        documents.push_back(sstr.str());
+                    } else {
+                        throw OpeningError(bufPath.string());
+                    }
+                } else {
+                    throw OpeningError(bufPath.string());
+                }
+            }
+        } else {
+            throw JsonFileContainingError(configJsonPath, "files");
+        }
+    } catch (const std::exception& ex) {
+        std::cerr << ex.what() << std::endl;
     }
 
     return documents;
