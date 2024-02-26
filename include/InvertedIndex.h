@@ -6,6 +6,7 @@
 #include <map>
 #include <cctype>
 #include <mutex>
+#include <thread>
 
 struct Entry {
     size_t doc_id, count;
