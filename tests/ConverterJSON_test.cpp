@@ -7,13 +7,15 @@ using json = nlohmann::json;
 TEST(ConverterJSON, readConfig) {
     ConverterJSON cj;
     std::vector<std::string> documents = cj.GetTextDocuments();
-    // Check if the number of documents is correct
-    int expectedDocuments = 3; // Change this to the number of documents in your config.json
+    int expectedDocuments = 3; 
     ASSERT_EQ(documents.size(), expectedDocuments);
+    std::vector<std::string> expectedDocs;
+    expectedDocs.push_back("document1.txt");
+    expectedDocs.push_back("document2.txt");
+    expectedDocs.push_back("document3.txt");
 
-    // Check if the documents match the expected values
-    std::vector<std::string> expectedDocs = {"doc1.txt", "doc2.txt", "doc3.txt"}; // Change this to the expected document names
-    for (int i = 0; i < expectedDocuments; i++) {
+    // Iterate through the documents and expectedDocs vectors
+    for (size_t i = 0; i < documents.size(); ++i) {
         ASSERT_EQ(documents[i], expectedDocs[i]);
     }
 }
