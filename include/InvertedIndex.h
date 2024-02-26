@@ -24,6 +24,7 @@ public:
     void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
     std::vector<std::mutex> mutexes(input_docs.size());
     std::vector<std::thread> threads = {};
+    docs = input_docs;
     for (int i = 0; i < input_docs.size(); i++) {
         threads.emplace_back([&](int index) {
     std::unique_lock<std::mutex> lock(mutexes[index]);
