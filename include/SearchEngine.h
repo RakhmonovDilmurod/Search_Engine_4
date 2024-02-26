@@ -15,97 +15,60 @@
 #include <set>
 
 
-struct RelativeIndex{
+struct RelativeIndex {
     size_t doc_id;
     float rank;
-    bool operator ==(const RelativeIndex& other) const {
-    return (doc_id == other.doc_id && rank == other.rank);
-    }
 };
-class SearchServer{
+
+class SearchServer {
 public:
-    SearchServer(InvertedIndex& idx) : _index(idx) {}
-
-    std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input) {
-        std::vector<std::vector<RelativeIndex>> results;
-        for (const auto& query : queries_input) {
-            std::vector<std::string> words = SplitAndSort(query);
-            std::vector<size_t> doc_ids = FindDocuments(words);
-            if (doc_ids.empty()) {
-                results.emplace_back();
-                continue;
-            }
-            std::vector<RelativeIndex> relative_indices;
-            for (size_t doc_id : doc_ids) {
-                float relevance = CalculateRelevance(doc_id, words);
-                relative_indices.push_back({doc_id, relevance});
-            }
-            std::sort(relative_indices.begin(), relative_indices.end(), [](const RelativeIndex& a, const RelativeIndex& b) {
-                return a.rank > b.rank;
-            });
-            results.push_back(relative_indices);
-        }
-        return results;
-    }
-
+SearchServer(InvertedIndex& index);
 private:
-    InvertedIndex& _index;
-
-    std::vector<std::string> SplitAndSort(const std::string& query) {
-        std::vector<std::string> words;
-        std::istringstream iss(query);
-        std::string word;
-        while (iss >> word) {
-            words.push_back(word);
-        }
-        std::sort(words.begin(), words.end(), [&](const std::string& a, const std::string& b) {
-            return _index.GetWordCount(a).size() < _index.GetWordCount(b).size();
-        });
-        return words;
-    }
-
-    std::vector<size_t> FindDocuments(const std::vector<std::string>& words) {
-        std::vector<size_t> doc_ids;
-        if (words.empty()) return doc_ids;
-        std::set<size_t> common_docs;
-        for (const auto& word : words) {
-            std::vector<Entry> word_docs = _index.GetWordCount(word);
-            std::set<size_t> word_doc_ids;
-            for (const auto& entry : word_docs) {
-                word_doc_ids.insert(entry.doc_id);
-            }
-            if (common_docs.empty()) {
-                common_docs = word_doc_ids;
-            } else {
-                std::set<size_t> intersection;
-                std::set_intersection(common_docs.begin(), common_docs.end(), word_doc_ids.begin(), word_doc_ids.end(),
-                                      std::inserter(intersection, intersection.begin()));
-                common_docs = intersection;
-            }
-        }
-        doc_ids.assign(common_docs.begin(), common_docs.end());
-        return doc_ids;
-    }
-
-    float CalculateRelevance(size_t doc_id, const std::vector<std::string>& words) {
-        float max_relevance = 0.0f;
-        float total_relevance = 0.0f;
-        for (const auto& word : words) {
-            std::vector<Entry> word_docs = _index.GetWordCount(word);
-            for (const auto& entry : word_docs) {
-                if (entry.doc_id == doc_id) {
-                    total_relevance += entry.count;
-                    break;
+    ConverterJSON converter;
+    InvertedIndex index;
+    std::map<std::string, std::vector<Entry>> freq_dictionary = index.getFreqDictionary();
+    std::vector<std::string> requestsInput = converter.GetRequests();
+    
+public:
+    std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input) {
+        std::vector<std::vector<RelativeIndex>> result = {};
+        for (const auto& i : requestsInput) {
+            std::map<std::string, std::pair<size_t, int>> wordRelevance;
+            std::vector<int> absoluteRelevance = {};
+            std::vector<RelativeIndex> relativeRelevance;
+            result.emplace_back();
+            std::istringstream iss(i);
+            std::string buf;
+            std::vector<std::string> uniqueWords = {};
+            while (!iss.eof()) {
+                iss >> buf;
+                buf = index.WordCleaning(buf);
+                if (std::count(uniqueWords.begin(), uniqueWords.end(), buf) == 0) {
+                    uniqueWords.push_back(buf);
                 }
             }
-        }
-        for (const auto& word : words) {
-            std::vector<Entry> word_docs = _index.GetWordCount(word);
-            for (const auto& entry : word_docs) {
-                max_relevance += entry.count;
+            for (const auto& j : uniqueWords) {
+                for (size_t k = 0; k < converter.GetTextDocuments().size(); k++) {
+                    if (freq_dictionary.count(j) != 0) {
+                        wordRelevance[j] = {k, freq_dictionary[j][k].count};
+                    } else {
+                        wordRelevance[j] = {k, 0};
+                    }
+                }
             }
+            for (size_t j = 0; j < converter.GetTextDocuments().size(); j++) {
+                int currentAbsRelevence = 0;
+                for (const auto& k : wordRelevance) {
+                    if (k.second.first == j) {
+                        currentAbsRelevence += k.second.second;
+                    }
+                }
+                absoluteRelevance.push_back(currentAbsRelevence);
+            }
+            for (int j = 0; j < absoluteRelevance.size(); j++) {
+               relativeRelevance.push_back(RelativeIndex{(size_t)j, static_cast<float>(absoluteRelevance[j]) / *std::max_element(absoluteRelevance.begin(), absoluteRelevance.end())});
+            result.push_back(relativeRelevance);
         }
-        return total_relevance / max_relevance;
+        return result;
     }
-};
-
+}};

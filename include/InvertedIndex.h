@@ -39,10 +39,10 @@ public:
     return {};
 }
 
-private:
     std::map<std::string, std::vector<Entry>> freq_dictionary;
+ private:   
+   void IndexDocument(const std::string& doc, size_t doc_id){
     std::mutex mutex;
-    void IndexDocument(const std::string& doc, size_t doc_id){
     std::map<std::string,size_t> words;
     std::istringstream iss(doc);
     std::string buf;
@@ -56,6 +56,7 @@ private:
         }
     }
     for (auto & word : words) {
+        
         mutex.lock();
         if (freq_dictionary.count(word.first) == 0) {
            freq_dictionary[word.first] = std::vector<Entry>{ Entry{doc_id, word.second} };
@@ -66,7 +67,7 @@ private:
         mutex.unlock();
     }
 }
-
+public:
     std::string WordCleaning(std::string& word) {
         while (!word.empty() && !isalnum(word.front())) {
             word.erase(word.begin());
