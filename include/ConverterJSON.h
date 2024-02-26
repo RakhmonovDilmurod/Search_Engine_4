@@ -57,7 +57,7 @@ public:
 
         if (configJsonFile.contains("files")) {
             for (const auto& i : configJsonFile["files"]) {
-                std::filesystem::path bufPath(i); // Replace the line here
+                std::filesystem::path bufPath(i);
                 if (std::filesystem::exists(bufPath)) {
                     std::ifstream subFile(bufPath);
                     if (subFile.is_open()) {
