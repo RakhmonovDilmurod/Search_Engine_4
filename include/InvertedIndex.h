@@ -7,6 +7,7 @@
 #include <cctype>
 #include <mutex>
 #include <thread>
+#include <sstream>
 
 struct Entry {
     size_t doc_id, count;
@@ -21,19 +22,17 @@ public:
     InvertedIndex() = default;
     std::vector<std::string> docs; // Содержимое документов
     void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
-    std::mutex mutex;
-    std::unique_lock<std::mutex> lock(mutex);
-    docs = input_docs;
+    std::vector<std::mutex> mutexes(input_docs.size());
     std::vector<std::thread> threads = {};
-    lock.unlock();
     for (int i = 0; i < input_docs.size(); i++) {
-        threads.emplace_back(&InvertedIndex::IndexDocument, this, docs[i], i);
+        threads.emplace_back([&](int index) {
+    std::unique_lock<std::mutex> lock(mutexes[index]);
+    InvertedIndex::IndexDocument(docs[index], index);}, i);
     }
     for (int i = 0; i < input_docs.size(); i++) {
         threads[i].join();
     }
 }
-
    std::vector<Entry> GetWordCount(const std::string& word) {
     auto it = freq_dictionary.find(word);
     if (it != freq_dictionary.end()) {
