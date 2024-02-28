@@ -24,7 +24,6 @@ public:
     std::vector<std::string> docs; // Содержимое документов
     
     void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
-        std::unique_lock<std::mutex> lock(mutex_);
         docs = input_docs;
         std::vector<std::thread> threads;
         for (size_t i = 0; i < input_docs.size(); i++) {
@@ -67,7 +66,6 @@ private:
     }
 
     void MergeIndexedDocument(const std::unordered_map<std::string, size_t>& indexed_doc){
-        std::unique_lock<std::mutex> lock(mutex_);
         for (auto& word : indexed_doc) {
             if (freq_dictionary.count(word.first) == 0) {
                 freq_dictionary[word.first] = std::vector<Entry>{ Entry{word.second, 1} };
