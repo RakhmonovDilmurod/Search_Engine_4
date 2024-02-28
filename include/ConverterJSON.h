@@ -128,7 +128,7 @@ public:
         return requests;
     }
 
-    void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
+    void putAnswers(std::vector<std::vector<std::pair<int, float>>>& answers) {
     json answersJsonFile;
     for (int i = 0; i < answers.size(); i++) {
         std::string numOfRequest;
@@ -146,8 +146,12 @@ public:
                 answersJsonFile["answers"]["request" + numOfRequest]["relevance"].push_back(block);
             }
         }
+    }
+
+    if (!answersJsonFile.empty()) {
         std::ofstream ofstreamJsonFile(answersJsonPath);
         ofstreamJsonFile << answersJsonFile;
+
         std::ifstream ifstreamJsonFile(answersJsonPath);
         json memory;
         ifstreamJsonFile >> memory;
