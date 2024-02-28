@@ -1,2 +1,2 @@
 ﻿#include "SearchEngine.h"
-SearchServer::SearchServer(InvertedIndex& index) : index(index) {} ;
+ SearchServer::SearchServer(InvertedIndex& index) : index(index) {} ;

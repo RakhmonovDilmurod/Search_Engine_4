@@ -16,21 +16,20 @@ struct Entry {
                 count == other.count);
     }
 };
-
+extern std::mutex mutex_;
 class InvertedIndex {
 public:
+    
     InvertedIndex() = default;
     std::vector<std::string> docs; // Содержимое документов
-
+    
     void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
-        std::mutex mutex;
-        std::unique_lock<std::mutex> lock(mutex);
+        std::unique_lock<std::mutex> lock(mutex_);
         docs = input_docs;
-
         std::vector<std::thread> threads;
         for (size_t i = 0; i < input_docs.size(); i++) {
             threads.emplace_back([&, i](){
-                std::unique_lock<std::mutex> lock(mutex);
+                std::unique_lock<std::mutex> lock(mutex_);
                 auto indexed_doc = WordCount(docs[i]);
                 MergeIndexedDocument(indexed_doc);
             });
@@ -51,7 +50,6 @@ public:
 
 private:
     std::map<std::string, std::vector<Entry>> freq_dictionary;
-
     std::unordered_map<std::string, size_t> WordCount(const std::string& doc) {
         std::unordered_map<std::string, size_t> words;
         std::istringstream iss(doc);
@@ -68,9 +66,8 @@ private:
         return words;
     }
 
-    void MergeIndexedDocument(const std::unordered_map<std::string, size_t>& indexed_doc) {
-        std::mutex mutex;
-        std::unique_lock<std::mutex> lock(mutex);
+    void MergeIndexedDocument(const std::unordered_map<std::string, size_t>& indexed_doc){
+        std::unique_lock<std::mutex> lock(mutex_);
         for (auto& word : indexed_doc) {
             if (freq_dictionary.count(word.first) == 0) {
                 freq_dictionary[word.first] = std::vector<Entry>{ Entry{word.second, 1} };
@@ -91,9 +88,7 @@ public:
         return word;
     }
  auto getFreqDictionary() const {
-        std::mutex mutex;
-        std::lock_guard<std::mutex> lock(mutex);
+        std::lock_guard lock (mutex_);
         return freq_dictionary;
-      
     }
 };
