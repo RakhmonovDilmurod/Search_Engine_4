@@ -21,17 +21,22 @@ class InvertedIndex {
 public:
     InvertedIndex() = default;
     std::vector<std::string> docs; // Содержимое документов
-    void UpdateDocumentBase(const std::vector<std::string>& input_docs) {
-    std::vector<std::mutex> mutexes(input_docs.size());
-    std::vector<std::thread> threads = {};
+   
+   void UpdateDocumentBase(const std::vector<std::string>& input_docs)
+{   std::mutex mutex;
+    std::unique_lock<std::mutex> lock(mutex);
     docs = input_docs;
-    for (int i = 0; i < input_docs.size(); i++) {
-        threads.emplace_back([&](int index) {
-    std::unique_lock<std::mutex> lock(mutexes[index]);
-    InvertedIndex::IndexDocument(input_docs[index], index);}, i);
+
+    std::vector<std::thread> threads;
+    for (size_t i = 0; i < input_docs.size(); i++) {
+        threads.emplace_back([&, i, &mutex, docs = input_docs]() {
+            std::unique_lock<std::mutex> lock(mutex);
+            InvertedIndex::IndexDocument(docs[i], i);
+        });
     }
-    for (int i = 0; i < input_docs.size(); i++) {
-        threads[i].join();
+
+    for (auto& thread : threads) {
+        thread.join();
     }
 }
    std::vector<Entry> GetWordCount(const std::string& word) {
@@ -43,10 +48,9 @@ public:
 }
    
     std::map<std::string, std::vector<Entry>> freq_dictionary;
- private:   
+ private:
    void IndexDocument(const std::string& doc, size_t doc_id){ 
-    std::mutex mutex;
-    std::lock_guard<std::mutex> lock(mutex);
+    std::mutex mutex;  
     std::map<std::string,size_t> words;
     std::istringstream iss(doc);
     std::string buf;
@@ -59,16 +63,14 @@ public:
             words[buf] += 1;
         }
     }
+    std::unique_lock<std::mutex> lock(mutex);
     for (auto & word : words) {
-        
-        mutex.lock();
         if (freq_dictionary.count(word.first) == 0) {
            freq_dictionary[word.first] = std::vector<Entry>{ Entry{doc_id, word.second} };
            freq_dictionary[word.first] = {Entry{doc_id, word.second} };;
         } else {
             freq_dictionary[word.first].push_back(Entry{doc_id, word.second});
         }
-        mutex.unlock();
     }
 }
 public:
