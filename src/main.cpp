@@ -3,18 +3,16 @@
 #include "InvertedIndex.h"
 #include "SearchEngine.h"
 #include <vector>
+#include <exception>
 
 int main() {
-    ConverterJSON conv;
-    std::vector<std::string> texts;
-    std::vector<std::string> requests;
-    InvertedIndex inv;
-    inv.UpdateDocumentBase(conv.GetTextDocuments());
-
     try {
+        ConverterJSON conv;
+        InvertedIndex inv;
+        inv.UpdateDocumentBase(conv.GetTextDocuments());
         SearchServer searchSer(inv);
-        texts = conv.GetTextDocuments();
-        requests = conv.GetRequests();
+        std::vector<std::string> texts = conv.GetTextDocuments();
+        std::vector<std::string> requests = conv.GetRequests();
 
         std::vector<std::vector<std::pair<int, float>>> readyResults;
         for (const auto& outer : searchSer.search(requests)) {
@@ -26,13 +24,17 @@ int main() {
         }
         conv.putAnswers(readyResults);
         std::cout << "Finished successfully!" << std::endl;
-    } catch (OpeningError &ex) {
-        std::cerr << ex.what() << std::endl;
-        return 1;
-    } catch (JsonFileContainingError &ex) {
-        std::cerr << ex.what() << std::endl;
-        return 1;
+        
+        return 0;
+    } catch (const OpeningError& ex) {
+        std::cerr << "Error opening file: " << ex.what() << std::endl;
+    } catch (const JsonFileContainingError& ex) {
+        std::cerr << "Error parsing JSON file: " << ex.what() << std::endl;
+    } catch (const std::bad_alloc& ex) {
+        std::cerr << "Memory allocation error: " << ex.what() << std::endl;
+    } catch (const std::exception& ex) {
+        std::cerr << "Error: " << ex.what() << std::endl;
     }
 
-    return 0;
+    return 1; 
 }
