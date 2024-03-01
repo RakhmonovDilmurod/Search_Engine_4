@@ -43,7 +43,7 @@ private:
     const std::string answersJsonPath = "config/answers.json";
 
 public:
-    std::vector<std::string> GetTextDocuments() {
+    std::vector<std::string> GetTextDocuments(){
     std::vector<std::string> documents;
 
     try {
@@ -59,8 +59,12 @@ public:
             for (const auto& i : configJsonFile["files"]) {
                 std::filesystem::path bufPath(i);
                 if (std::filesystem::exists(bufPath)) {
-                    std::ifstream subFile(bufPath);
+                    std::ifstream subFile(bufPath, std::ios::ate); // Open the file with std::ios::ate to check the length
                     if (subFile.is_open()) {
+                        if (subFile.tellg() == 0) { // Check if the file is empty
+                            throw OpeningError(bufPath.string() + " is empty.");
+                        }
+                        subFile.seekg(0); // Reset the read position to the beginning
                         std::ostringstream sstr;
                         sstr << subFile.rdbuf();
                         documents.push_back(sstr.str());
@@ -81,23 +85,12 @@ public:
     return documents;
 }
 
-    int GetResponsesLimit() {
-        try {
-            std::ifstream configFile(configJsonPath);
-            if (!configFile.is_open()) {
-                throw OpeningError(configJsonPath);
-            }
-
-            json config;
-            configFile >> config;
-
-            configFile.close();
-
-            return config.contains("max_responses") ? config["max_responses"].get<int>() : 5;
-        } catch (const std::exception& ex) {
-            std::cerr << ex.what() << std::endl;
-            return 5;
-        }
+    int GetResponsesLimit(){
+        std::ifstream configFile(configJsonPath);
+        json config;
+        configFile >> config;
+        int limit = config["max_responses"];
+        return limit;
     }
 
     std::vector<std::string> GetRequests() {
