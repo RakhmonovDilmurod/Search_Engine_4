@@ -44,57 +44,75 @@ private:
 
 public:
     std::vector<std::string> GetTextDocuments(){
-    std::vector<std::string> documents;
+        std::vector<std::string> documents;
 
-    try {
-        std::ifstream ifSJsonFile(configJsonPath);
-        if (!ifSJsonFile.is_open()) {
-            throw OpeningError(configJsonPath);
-        }
+        try
+        {
+            std::ifstream ifSJsonFile(configJsonPath);
+            if (!ifSJsonFile.is_open())
+            {
+                throw OpeningError(configJsonPath);
+            }
 
-        json configJsonFile;
-        ifSJsonFile >> configJsonFile;
+            if (ifSJsonFile.peek() == std::ifstream::traits_type::eof())
+            {
+                throw OpeningError(configJsonPath + " is empty.");
+            }
 
-        if (configJsonFile.contains("files")) {
-            for (const auto& i : configJsonFile["files"]) {
+            json configJsonFile;
+            ifSJsonFile >> configJsonFile;
+
+            if (!configJsonFile.contains("files"))
+            {
+                throw JsonFileContainingError(configJsonPath, "files");
+            }
+
+            for (const auto& i : configJsonFile["files"])
+            {
                 std::filesystem::path bufPath(i);
-                if (std::filesystem::exists(bufPath)) {
-                    std::ifstream subFile(bufPath, std::ios::ate); // Open the file with std::ios::ate to check the length
-                    if (subFile.is_open()) {
-                        if (subFile.tellg() == 0) { // Check if the file is empty
-                            throw OpeningError(bufPath.string() + " is empty.");
-                        }
-                        subFile.seekg(0); // Reset the read position to the beginning
-                        std::ostringstream sstr;
-                        sstr << subFile.rdbuf();
-                        documents.push_back(sstr.str());
-                    } else {
+                if (std::filesystem::exists(bufPath))
+                {
+                    std::ifstream subFile(bufPath, std::ios::ate); 
+                    if (!subFile.is_open())
+                    {
                         throw OpeningError(bufPath.string());
                     }
-                } else {
+
+                    if (subFile.tellg() == 0)
+                    {
+                        throw OpeningError(bufPath.string() + " is empty.");
+                    }
+
+                    subFile.seekg(0); 
+                    std::ostringstream sstr;
+                    sstr << subFile.rdbuf();
+                    documents.push_back(sstr.str());
+                }
+                else
+                {
                     throw OpeningError(bufPath.string());
                 }
             }
-        } else {
-            throw JsonFileContainingError(configJsonPath, "files");
         }
-    } catch (const std::exception& ex) {
-        std::cerr << ex.what() << std::endl;
+        catch (const std::exception& ex)
+        {
+            std::cerr << ex.what() << std::endl;
+        }
+
+        return documents;
     }
 
-    return documents;
-}
 
     int GetResponsesLimit(){
         std::ifstream configFile(configJsonPath);
         json config;
         configFile >> config;
-        int limit = config["max_responses"];
+        int limit =  (int) config["config"]["max_responses"];
         return limit;
     }
 
     std::vector<std::string> GetRequests() {
-        std::vector<std::string> requests;
+        std::vector<std::string> requests = {};
 
         try {
             std::ifstream requestsFile(requestsJsonPath);
