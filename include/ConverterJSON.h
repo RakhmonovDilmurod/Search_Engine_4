@@ -39,7 +39,7 @@ public:
 
 class ConverterJSON {
 private:
-    std::filesystem::path basePath = std::filesystem::current_path().parent_path().parent_path() / "config";
+    std::filesystem::path basePath = std::filesystem::current_path() / "config";
     std::filesystem::path configJsonPathF = basePath / "config.json";
     std::filesystem::path requestsJsonPathF = basePath / "requests.json";
     std::filesystem::path answersJsonPathF = basePath / "answers.json";
