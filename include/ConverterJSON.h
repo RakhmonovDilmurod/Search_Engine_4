@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 #include <nlohmann/json.hpp>
 #include <fstream>
@@ -38,81 +39,85 @@ public:
 
 class ConverterJSON {
 private:
-    const std::string configJsonPath = "config/config.json";
-    const std::string requestsJsonPath ="config/requests.json";
-    const std::string answersJsonPath = "config/answers.json";
+    std::filesystem::path basePath = std::filesystem::current_path().parent_path().parent_path() / "config";
+    std::filesystem::path configJsonPathF = basePath / "config.json";
+    std::filesystem::path requestsJsonPathF = basePath / "requests.json";
+    std::filesystem::path answersJsonPathF = basePath / "answers.json";
+
+    const std::string configJsonPath = configJsonPathF.string();
+    const std::string requestsJsonPath = requestsJsonPathF.string();
+    const std::string answersJsonPath = answersJsonPathF.string();
+
+
 
 public:
-    std::vector<std::string> GetTextDocuments(){
+    std::vector<std::string> GetTextDocuments() {
         std::vector<std::string> documents;
 
-        try
-        {
+        try {
             std::ifstream ifSJsonFile(configJsonPath);
-            if (!ifSJsonFile.is_open())
-            {
+            if (!ifSJsonFile.is_open()) {
                 throw OpeningError(configJsonPath);
-            }
-
-            if (ifSJsonFile.peek() == std::ifstream::traits_type::eof())
-            {
-                throw OpeningError(configJsonPath + " is empty.");
             }
 
             json configJsonFile;
             ifSJsonFile >> configJsonFile;
 
-            if (!configJsonFile.contains("files"))
-            {
+            if (!configJsonFile.contains("files")) {
                 throw JsonFileContainingError(configJsonPath, "files");
             }
 
-            for (const auto& i : configJsonFile["files"])
-            {
+            for (const auto& i : configJsonFile["files"]) {
                 std::filesystem::path bufPath(i);
-                if (std::filesystem::exists(bufPath))
-                {
-                    std::ifstream subFile(bufPath, std::ios::ate); 
-                    if (!subFile.is_open())
-                    {
-                        throw OpeningError(bufPath.string());
-                    }
-
-                    if (subFile.tellg() == 0)
-                    {
-                        throw OpeningError(bufPath.string() + " is empty.");
-                    }
-
-                    subFile.seekg(0); 
-                    std::ostringstream sstr;
-                    sstr << subFile.rdbuf();
-                    documents.push_back(sstr.str());
-                }
-                else
-                {
+                if (!std::filesystem::exists(bufPath)) {
                     throw OpeningError(bufPath.string());
                 }
+
+                std::ifstream subFile(bufPath);
+                if (!subFile.is_open()) {
+                    throw OpeningError(bufPath.string());
+                }
+
+                // Check if the file is empty
+                if (subFile.peek() == std::ifstream::traits_type::eof()) {
+                    throw OpeningError(bufPath.string() + " is empty.");
+                }
+
+                subFile.seekg(0); // Reset the read position to the beginning
+                std::ostringstream sstr;
+                sstr << subFile.rdbuf();
+                documents.push_back(sstr.str());
             }
-        }
-        catch (const std::exception& ex)
-        {
+        } catch (const std::exception& ex) {
             std::cerr << ex.what() << std::endl;
         }
 
         return documents;
     }
 
+    int GetResponsesLimit() {
+        try {
+            std::ifstream configFile(configJsonPath);
+            if (!configFile.is_open()) {
+                throw OpeningError(configJsonPath);
+            }
 
-    int GetResponsesLimit(){
-        std::ifstream configFile(configJsonPath);
-        json config;
-        configFile >> config;
-        int limit =  (int) config["config"]["max_responses"];
-        return limit;
+            json config;
+            configFile >> config;
+
+            configFile.close();
+
+            return config.contains("config") && config["config"].contains("max_responses")
+                       ? config["config"]["max_responses"].get<int>()
+                       : 5; 
+        } catch (const std::exception& ex) {
+            std::cerr << ex.what() << std::endl;
+            return 5; 
+        }
     }
 
     std::vector<std::string> GetRequests() {
-        std::vector<std::string> requests = {};
+        std::vector<std::string> requests;
 
         try {
             std::ifstream requestsFile(requestsJsonPath);
@@ -139,35 +144,29 @@ public:
         return requests;
     }
 
-    void putAnswers(std::vector<std::vector<std::pair<int, float>>>& answers) {
-    json answersJsonFile;
-    for (int i = 0; i < answers.size(); i++) {
-        std::string numOfRequest;
-        for (int n = 0; n < 3-std::to_string(i).length();n++) {
-            numOfRequest += "0";
-        }
-        numOfRequest += std::to_string(i+1);
+    void putAnswers(const std::vector<std::vector<std::pair<int, float>>>& answers) {
+        json answersJsonFile;
 
-        if (!answers[i].empty()) {
-            answersJsonFile["answers"]["request" + numOfRequest]["result"] = "true";
-            for (auto & j : answers[i]) {
-               json::value_type block;
-                block["docid"] = j.first;
-                block["rank"] = j.second;
-                answersJsonFile["answers"]["request" + numOfRequest]["relevance"].push_back(block);
+        for (int i = 0; i < answers.size(); i++) {
+            std::string numOfRequest = std::to_string(i + 1);
+
+            if (!answers[i].empty()) {
+                json& requestJson = answersJsonFile["answers"]["request" + numOfRequest];
+                requestJson["result"] = true;
+                
+                for (const auto& j : answers[i]) {
+                    json relevance;
+                    relevance["docid"] = j.first;
+                    relevance["rank"] = j.second;
+                    requestJson["relevance"].push_back(relevance);
+                }
             }
         }
-    }
 
-    if (!answersJsonFile.empty()) {
-        std::ofstream ofstreamJsonFile(answersJsonPath);
-        ofstreamJsonFile << answersJsonFile;
-
-        std::ifstream ifstreamJsonFile(answersJsonPath);
-        json memory;
-        ifstreamJsonFile >> memory;
-        ofstreamJsonFile.close();
-        ifstreamJsonFile.close();
+        if (!answersJsonFile.empty()) {
+            std::ofstream ofstreamJsonFile(answersJsonPath);
+            ofstreamJsonFile << std::setw(4) << answersJsonFile << std::endl;
+        }
     }
-}
 };
+
