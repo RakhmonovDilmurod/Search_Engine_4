@@ -13,6 +13,7 @@
 #include "ConverterJSON.h"
 #include "InvertedIndex.h"
 #include <set>
+#include <cmath>
 
 
 struct RelativeIndex {
@@ -29,52 +30,69 @@ SearchServer(InvertedIndex& index);
 private:
     ConverterJSON converter;
     InvertedIndex index;
-    std::map<std::string, std::vector<Entry>> freq_dictionary = index.getFreqDictionary();
     std::vector<std::string> requestsInput = converter.GetRequests();
     
 public:
 std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& queries_input) {
-    std::vector<std::vector<RelativeIndex>> result = {};
-    for (const auto& i : requestsInput) {
-        std::map<std::string, std::pair<size_t, int>> wordRelevance;
-        std::vector<float> absoluteRelevance = {};
-        std::vector<RelativeIndex> relativeRelevance;
-        result.emplace_back();
-        std::istringstream iss(i);
-        std::string buf;
-        std::vector<std::string> uniqueWords = {};
-        while (!iss.eof()) {
-            iss >> buf;
-            buf = index.WordCleaning(buf);
-            if (std::count(uniqueWords.begin(), uniqueWords.end(), buf) == 0) {
-                uniqueWords.push_back(buf);
+        std::vector<std::vector<RelativeIndex>> results;
+
+        for (const auto& query : queries_input) {
+            std::vector<RelativeIndex> query_results;
+            std::map<size_t, int> doc_freq; 
+
+          
+            std::vector<std::string> words;
+            std::stringstream ss(query);
+            std::string word;
+            while (ss >> word) {
+                words.push_back(word);
             }
-        }
-        for (const auto& j : uniqueWords) {
-            for (size_t k = 0; k < converter.GetTextDocuments().size(); k++) {
-                if (freq_dictionary.count(j) != 0) {
-                    wordRelevance[j] = {k, freq_dictionary[j][k].count};
-                } else {
-                    wordRelevance[j] = {k, 0};
+
+            
+            std::vector<std::string> unique_words(words.size());
+            std::unique_copy(words.begin(), words.end(), unique_words.begin());
+
+           
+            std::map<std::string, int> word_count;
+            for (const auto& word : unique_words) {
+                word_count[word] = index.GetWordCount(word).size();
+            }
+            std::sort(unique_words.begin(), unique_words.end(),
+                [&word_count](const std::string& a, const std::string& b) {
+                    return word_count[a] < word_count[b];
+                });
+
+         
+            for (const auto& word : unique_words) {
+                const auto& entries = index.GetWordCount(word);
+                for (const auto& entry : entries) {
+                    auto it = doc_freq.find(entry.doc_id);
+                    if (it == doc_freq.end()) {
+                        doc_freq[entry.doc_id] = entry.count;
+                    } else {
+                        it->second += entry.count;
+                    }
                 }
             }
+
+        
+            float max_relevance = 0;
+            for (const auto& doc_freq_entry : doc_freq) {
+                float relevance = static_cast<float>(doc_freq_entry.second) / index.getFreqDictionary().size();
+                if (relevance > max_relevance) {
+                    max_relevance = relevance;
+                }
+                query_results.push_back({ doc_freq_entry.first, relevance });
+            }
+
+            
+            std::sort(query_results.begin(), query_results.end(),
+                [](const RelativeIndex& a, const RelativeIndex& b) {
+                    return a.rank > b.rank;
+                });
+
+            results.push_back(query_results);
         }
-        std::vector<int> documentFrequencies(converter.GetTextDocuments().size(), 0);
-        for (const auto& j : wordRelevance) {
-            documentFrequencies[j.second.first] += j.second.second;
-        }
-        float maxFrequency = *std::max_element(documentFrequencies.begin(), documentFrequencies.end());
-        if (maxFrequency == 0) {
-            maxFrequency = 1;
-        }
-        for (size_t j = 0; j < converter.GetTextDocuments().size(); j++) {
-            absoluteRelevance.push_back(documentFrequencies[j] * 1.0 / maxFrequency);
-        }
-        for (size_t j = 0; j < absoluteRelevance.size(); j++) {
-            relativeRelevance.push_back(RelativeIndex{(size_t)j, absoluteRelevance[j]});
-        }
-        result.push_back(relativeRelevance);
-    }
-    return result;
-  }
-};
+
+        return results;
+    }};
