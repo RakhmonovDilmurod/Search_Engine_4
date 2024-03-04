@@ -149,7 +149,7 @@ public:
 
         for (int i = 0; i < answers.size(); i++) {
             std::string numOfRequest = std::to_string(i + 1);
-
+           
             if (!answers[i].empty()) {
                 json& requestJson = answersJsonFile["answers"]["request" + numOfRequest];
                 requestJson["result"] = true;
@@ -160,6 +160,8 @@ public:
                     relevance["rank"] = j.second;
                     requestJson["relevance"].push_back(relevance);
                 }
+            }else{
+                answersJsonFile["result"] = false;
             }
         }
 
