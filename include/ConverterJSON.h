@@ -151,17 +151,15 @@ public:
             std::string numOfRequest = std::to_string(i + 1);
            
             if (!answers[i].empty()) {
-                json& requestJson = answersJsonFile["answers"]["request" + numOfRequest];
-                requestJson["result"] = true;
-                
+                answersJsonFile["answers"]["request" + numOfRequest]["result"] = "true";    
                 for (const auto& j : answers[i]) {
-                    json relevance;
-                    relevance["docid"] = j.first;
-                    relevance["rank"] = j.second;
-                    requestJson["relevance"].push_back(relevance);
+                nlohmann::json::value_type block;
+                block["docid"] = j.first;
+                block["rank"] = j.second;
+                answersJsonFile["answers"]["request" + numOfRequest]["relevance"].push_back(block);
                 }
             }else{
-                answersJsonFile["result"] = false;
+                answersJsonFile["answers"]["request" + numOfRequest]["result"] = "false";  
             }
         }
 
