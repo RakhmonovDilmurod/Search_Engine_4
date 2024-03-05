@@ -78,12 +78,12 @@ public:
                     throw OpeningError(bufPath.string());
                 }
 
-                // Check if the file is empty
+                
                 if (subFile.peek() == std::ifstream::traits_type::eof()) {
                     throw OpeningError(bufPath.string() + " is empty.");
                 }
 
-                subFile.seekg(0); // Reset the read position to the beginning
+                subFile.seekg(0); 
                 std::ostringstream sstr;
                 sstr << subFile.rdbuf();
                 documents.push_back(sstr.str());

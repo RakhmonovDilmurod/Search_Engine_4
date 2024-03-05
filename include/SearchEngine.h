@@ -38,7 +38,7 @@ std::vector<std::vector<RelativeIndex>> search(const std::vector<std::string>& q
 
         for (const auto& query : queries_input) {
             std::vector<RelativeIndex> query_results;
-            std::map<size_t, int> doc_freq; 
+            std::map<size_t, float> doc_freq; 
 
           
             std::vector<std::string> words;
