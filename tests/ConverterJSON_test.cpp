@@ -3,46 +3,39 @@
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
-
-TEST(ConverterJSON, readConfig) {
-    ConverterJSON cj;
-    std::vector<std::string> documents = cj.GetTextDocuments();
-    int expectedDocuments = 3; 
-    ASSERT_EQ(documents.size(), expectedDocuments);
-    std::vector<std::string> expectedDocs;
-    expectedDocs.push_back("document1.txt");
-    expectedDocs.push_back("document2.txt");
-    expectedDocs.push_back("document3.txt");
-
-    // Iterate through the documents and expectedDocs vectors
-    for (size_t i = 0; i < documents.size(); ++i) {
-        ASSERT_EQ(documents[i], expectedDocs[i]);
-    }
+ConverterJSON converter;
+TEST(ConverterJSONTest, GetTextDocumentsTest) {
+    std::vector<std::string> documents = converter.GetTextDocuments();
+    EXPECT_EQ(documents.size(), 3);
+    EXPECT_EQ(documents[0], "test document 1"); 
+    
 }
 
-TEST(ConverterJSON, readRequests) {
-    ConverterJSON converter;
-    std::vector<std::string> requests = converter.GetRequests();
-    EXPECT_FALSE(requests.empty());
-    EXPECT_EQ(requests.size(), 3); // Or any other expected size.
-}
-
-TEST(ConverterJSON, getResponsesLimit) {
-    ConverterJSON converter;
+TEST(ConverterJSONTest, GetResponsesLimitTest) {
     int limit = converter.GetResponsesLimit();
-    // Add your expectations here, for example:
-    EXPECT_GT(limit, 0);
-    EXPECT_LE(limit, 100); // Or any other expected range.
+    EXPECT_EQ(limit, 5);
 }
 
-TEST(ConverterJSON, putAnswersTest) {
-    // Create an instance of the ConverterJSON class
-    ConverterJSON converter;
-    // Create a sample vector of answers
-    std::vector<std::vector<std::pair<int,float>>> sampleAnswers ={
-        {{1, 0.9}, {2, 0.8}},
-        {{3, 0.7}, {4, 0.6}},
-        {} }; // An empty answer
-    // Call the putAnswers method with the sample answers
-    ASSERT_NO_THROW(converter.putAnswers(sampleAnswers));
+TEST(ConverterJSONTest, GetRequestsTest) {
+    std::vector<std::string> requests = converter.GetRequests();
+    EXPECT_EQ(requests.size(), 2); 
+    EXPECT_EQ(requests[0], "request 1"); 
+}
+
+TEST(ConverterJSONTest, PutAnswersTest) {
+    std::vector<std::vector<std::pair<int, float>>> answers;
+    answers.push_back({{1, 0.5}, {2, 0.8}});
+    answers.push_back({{3, 0.9}});
+    converter.putAnswers(answers);
+    std::ifstream answersFile("answers.json");
+    nlohmann::json answersJson;
+    answersFile >> answersJson;
+    EXPECT_TRUE(answersJson.contains("answers"));
+    EXPECT_EQ(answersJson["answers"].size(), 2);
+    EXPECT_EQ(answersJson["answers"][0]["result"], "true");
+    EXPECT_EQ(answersJson["answers"][0]["relevance"].size(), 2);
+    EXPECT_EQ(answersJson["answers"][0]["relevance"][0]["docid"], 1);
+    EXPECT_EQ(answersJson["answers"][0]["relevance"][0]["rank"], 0.5);
+    EXPECT_EQ(answersJson["answers"][0]["relevance"][1]["docid"], 2);
+    EXPECT_EQ(answersJson["answers"][0]["relevance"][1]["rank"], 0.8);
 }
