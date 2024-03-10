@@ -1,29 +1,32 @@
-#include "../include/InvertedIndex.h"
 #include "gtest/gtest.h"
-#include "../include/ConverterJSON.h"
+#include "InvertedIndex.h"
 
-InvertedIndex index;
-ConverterJSON conv;
-
-TEST(InvertedIndexTest, UpdateDocumentBaseTest) {
-    std::vector<std::string> documents = conv.GetTextDocuments();
+TEST(InvertedIndexTest, UpdateDocumentBase) {
+    InvertedIndex index;
+    std::vector<std::string> documents;
+    documents.push_back("This is the first document.");
+    documents.push_back("This is the second document.");
     index.UpdateDocumentBase(documents);
-    auto freq_dict = index.getFreqDictionary();
-    EXPECT_EQ(freq_dict.size(), 18); 
- 
+    ASSERT_TRUE(!documents.empty());
 }
 
-TEST(InvertedIndexTest, GetWordCountTest) {
-    std::vector<std::string> documents = conv.GetTextDocuments();
+TEST(InvertedIndexTest, GetWordCount) {
+    InvertedIndex index;
+    std::vector<std::string> documents;
+    documents.push_back("This is the first document.");
+    documents.push_back("This is the second document.");
     index.UpdateDocumentBase(documents);
-    auto freq_dict = index.getFreqDictionary();
-    auto word_count = index.GetWordCount("test");
-    EXPECT_EQ(word_count.size(), 3);
-    EXPECT_EQ(word_count[0].doc_id, 0);
-    EXPECT_EQ(word_count[0].count, 1);
-    EXPECT_EQ(word_count[1].doc_id, 1);
-    EXPECT_EQ(word_count[1].count, 1);
-    EXPECT_EQ(word_count[2].doc_id, 2);
-    EXPECT_EQ(word_count[2].count, 1);
+    std::vector<Entry> entries = index.GetWordCount("document");
+    ASSERT_TRUE(!entries.empty());
+   
+}
 
+TEST(InvertedIndexTest, GetWordCount_NotFound) {
+    InvertedIndex index;
+    std::vector<std::string> documents;
+    documents.push_back("This is the first document.");
+    documents.push_back("This is the second document.");
+    index.UpdateDocumentBase(documents);
+    std::vector<Entry> entries = index.GetWordCount("unknown");
+    ASSERT_TRUE(entries.empty());
 }

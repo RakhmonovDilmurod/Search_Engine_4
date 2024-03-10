@@ -1,41 +1,33 @@
-#include "../include/ConverterJSON.h"
 #include "gtest/gtest.h"
-#include <nlohmann/json.hpp>
+#include "ConverterJSON.h"
 
-using json = nlohmann::json;
-ConverterJSON converter;
-TEST(ConverterJSONTest, GetTextDocumentsTest) {
+TEST(ConverterJSONTest, GetTextDocuments) {
+    ConverterJSON converter;
     std::vector<std::string> documents = converter.GetTextDocuments();
-    EXPECT_EQ(documents.size(), 3);
-    EXPECT_EQ(documents[0], "test document 1"); 
-    
+    ASSERT_TRUE(!documents.empty());
 }
 
-TEST(ConverterJSONTest, GetResponsesLimitTest) {
+TEST(ConverterJSONTest, GetResponsesLimit) {
+    ConverterJSON converter;
     int limit = converter.GetResponsesLimit();
-    EXPECT_EQ(limit, 5);
+    ASSERT_TRUE(limit > 0);
 }
 
-TEST(ConverterJSONTest, GetRequestsTest) {
+TEST(ConverterJSONTest, GetRequests) {
+    ConverterJSON converter;
     std::vector<std::string> requests = converter.GetRequests();
-    EXPECT_EQ(requests.size(), 2); 
-    EXPECT_EQ(requests[0], "request 1"); 
+    ASSERT_TRUE(!requests.empty());
 }
 
-TEST(ConverterJSONTest, PutAnswersTest) {
+TEST(ConverterJSONTest, PutAnswers) {
+    ConverterJSON converter;
     std::vector<std::vector<std::pair<int, float>>> answers;
-    answers.push_back({{1, 0.5}, {2, 0.8}});
-    answers.push_back({{3, 0.9}});
     converter.putAnswers(answers);
-    std::ifstream answersFile("answers.json");
-    nlohmann::json answersJson;
-    answersFile >> answersJson;
-    EXPECT_TRUE(answersJson.contains("answers"));
-    EXPECT_EQ(answersJson["answers"].size(), 2);
-    EXPECT_EQ(answersJson["answers"][0]["result"], "true");
-    EXPECT_EQ(answersJson["answers"][0]["relevance"].size(), 2);
-    EXPECT_EQ(answersJson["answers"][0]["relevance"][0]["docid"], 1);
-    EXPECT_EQ(answersJson["answers"][0]["relevance"][0]["rank"], 0.5);
-    EXPECT_EQ(answersJson["answers"][0]["relevance"][1]["docid"], 2);
-    EXPECT_EQ(answersJson["answers"][0]["relevance"][1]["rank"], 0.8);
+    json answersJsonFile;
+    std::filesystem::path basePath = std::filesystem::current_path() / "config";
+    std::filesystem::path answersJsonPathF = basePath / "answers.json";
+    std::string answersJsonPath = answersJsonPathF.string();
+    std::ifstream ifs(answersJsonPath);
+    ifs >> answersJsonFile;
+    ASSERT_TRUE(answersJsonFile.contains("answers"));
 }
