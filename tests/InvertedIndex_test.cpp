@@ -1,6 +1,7 @@
 #include "../include/InvertedIndex.h"
 #include "gtest/gtest.h"
 #include "../include/ConverterJSON.h"
+
 InvertedIndex index;
 ConverterJSON conv;
 
