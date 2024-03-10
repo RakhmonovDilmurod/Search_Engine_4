@@ -1,11 +1,11 @@
 #include "../include/InvertedIndex.h"
 #include "gtest/gtest.h"
-
+#include "../include/ConverterJSON.h"
 InvertedIndex index;
-
+ConverterJSON conv;
 
 TEST(InvertedIndexTest, UpdateDocumentBaseTest) {
-    std::vector<std::string> documents = {"test document 1", "test document 2", "test document 3"};
+    std::vector<std::string> documents = conv.GetTextDocuments();
     index.UpdateDocumentBase(documents);
     auto freq_dict = index.getFreqDictionary();
     EXPECT_EQ(freq_dict.size(), 18); 
@@ -13,7 +13,7 @@ TEST(InvertedIndexTest, UpdateDocumentBaseTest) {
 }
 
 TEST(InvertedIndexTest, GetWordCountTest) {
-    std::vector<std::string> documents = {"test document 1", "test document 2", "test document 3"};
+    std::vector<std::string> documents = conv.GetTextDocuments();
     index.UpdateDocumentBase(documents);
     auto freq_dict = index.getFreqDictionary();
     auto word_count = index.GetWordCount("test");
