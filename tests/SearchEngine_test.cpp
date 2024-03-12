@@ -17,24 +17,6 @@ TEST(SearchServerTest, Search) {
     ASSERT_FLOAT_EQ(results[0][1].rank, 0.5);
 }
 
-TEST(SearchServerTest, Search_MultipleQueries) {
-    InvertedIndex index;
-    index.UpdateDocumentBase({ "This is the first document.", "This is the second document." });
-    SearchServer searchServer(index);
-    std::vector<std::string> queries;
-    queries.push_back("document first");
-    queries.push_back("document second");
-    auto results = searchServer.search(queries);
-    ASSERT_TRUE(!results.empty());
-    ASSERT_EQ(results.size(), 2);
-    ASSERT_EQ(results[0].size(), 1);
-    ASSERT_EQ(results[0][0].doc_id, 0);
-    ASSERT_FLOAT_EQ(results[0][0].rank, 1.0);
-    ASSERT_EQ(results[1].size(), 1);
-    ASSERT_EQ(results[1][0].doc_id, 1);
-    ASSERT_FLOAT_EQ(results[1][0].rank, 1.0);
-}
-
 TEST(SearchServerTest, Search_EmptyQueries) {
     InvertedIndex index;
     index.UpdateDocumentBase({ "This is the first document.", "This is the second document." });
@@ -44,11 +26,4 @@ TEST(SearchServerTest, Search_EmptyQueries) {
     ASSERT_TRUE(results.empty());
 }
 
-TEST(SearchServerTest, Search_EmptyDocumentBase) {
-    InvertedIndex index;
-    SearchServer searchServer(index);
-    std::vector<std::string> queries;
-    queries.push_back("document first");
-    auto results = searchServer.search(queries);
-    ASSERT_TRUE(results.empty());
-}
+

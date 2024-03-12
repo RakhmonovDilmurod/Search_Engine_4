@@ -22,6 +22,7 @@ TEST(ConverterJSONTest, GetRequests) {
 TEST(ConverterJSONTest, PutAnswers) {
     ConverterJSON converter;
     std::vector<std::vector<std::pair<int, float>>> answers;
+    answers.push_back({ {1, 0.5f}, {2, 0.8f} });
     converter.putAnswers(answers);
     json answersJsonFile;
     std::filesystem::path basePath = std::filesystem::current_path() / "config";
@@ -30,4 +31,23 @@ TEST(ConverterJSONTest, PutAnswers) {
     std::ifstream ifs(answersJsonPath);
     ifs >> answersJsonFile;
     ASSERT_TRUE(answersJsonFile.contains("answers"));
+    auto answersJson = answersJsonFile["answers"];
+    ASSERT_TRUE(answersJson.is_object());
+    int count = 0;
+    for (const auto& answer : answersJson) {
+        ASSERT_TRUE(answer.is_object());
+        ASSERT_TRUE(answer.contains("result"));
+        ASSERT_TRUE(answer["result"].is_string());
+        ASSERT_TRUE(answer.contains("relevance"));
+        ASSERT_TRUE(answer["relevance"].is_array());
+        for (const auto& relevance : answer["relevance"]) {
+            ASSERT_TRUE(relevance.is_object());
+            ASSERT_TRUE(relevance.contains("docid"));
+            ASSERT_TRUE(relevance["docid"].is_number_integer());
+            ASSERT_TRUE(relevance.contains("rank"));
+            ASSERT_TRUE(relevance["rank"].is_number_float());
+            count++;
+        }
+    }
+    ASSERT_EQ(count, 2);
 }
