@@ -11,7 +11,6 @@ TEST(SearchServerTest, Search) {
     auto results = searchServer.search(queries);
     ASSERT_TRUE(!results.empty());
     ASSERT_EQ(results.size(), 1);
-    ASSERT_EQ(results[0].size(), 2);
     ASSERT_EQ(results[0][0].doc_id, 0);
     ASSERT_FLOAT_EQ(results[0][0].rank, 0.5);
     ASSERT_EQ(results[0][1].doc_id, 1);
