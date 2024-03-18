@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/user/Documents/GitHub/Search_Engine_4/include -I/include -I/Users/user/Documents/GitHub/Search_Engine_4/tests/GtestTests -I/Users/user/Documents/GitHub/Search_Engine_4/tests/PUBLIC -I/Users/user/Documents/GitHub/Search_Engine_4/nlohmann_json/include -isystem /Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include -isystem /Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/Users/user/Documents/GitHub/Search_Engine_4/include -I/Users/user/Documents/GitHub/Search_Engine_4/tests/GtestTests -I/Users/user/Documents/GitHub/Search_Engine_4/tests/PUBLIC -I/Users/user/Documents/GitHub/Search_Engine_4/nlohmann_json/include -isystem /Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest/include -isystem /Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-src/googletest
 
 CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
 
