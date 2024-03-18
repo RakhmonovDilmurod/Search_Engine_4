@@ -14,6 +14,15 @@
         },
         "request3": {
             "result": "false"
+        },
+        "request4": {
+            "relevance": [
+                {
+                    "docid": 4,
+                    "rank": 0.007067137863487005
+                }
+            ],
+            "result": "true"
         }
     }
 }
