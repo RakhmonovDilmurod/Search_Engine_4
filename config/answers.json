@@ -1,0 +1,13 @@
+{
+    "answers": {
+        "request1": {
+            "relevance": [
+                {
+                    "docid": 3,
+                    "rank": 0.0035335689317435026
+                }
+            ],
+            "result": "true"
+        }
+    }
+}

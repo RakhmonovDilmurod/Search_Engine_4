@@ -8,6 +8,7 @@
 #include <string>
 #include <stdexcept>
 #include <filesystem>
+#include <sstream>
 
 using json = nlohmann::json;
 

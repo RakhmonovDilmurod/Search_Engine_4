@@ -1,16 +1,14 @@
 file(REMOVE_RECURSE
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/SearchEngine.exe"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/SearchEngine.exe.manifest"
-  "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/SearchEngine.pdb"
-  "CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj"
-  "CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.obj.d"
-  "CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj"
-  "CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.obj.d"
-  "CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj"
-  "CMakeFiles/SearchEngine.dir/SearchEngine.cpp.obj.d"
-  "CMakeFiles/SearchEngine.dir/main.cpp.obj"
-  "CMakeFiles/SearchEngine.dir/main.cpp.obj.d"
-  "libSearchEngine.dll.a"
+  "/Users/user/Documents/GitHub/Search_Engine_4/SearchEngine"
+  "/Users/user/Documents/GitHub/Search_Engine_4/SearchEngine.pdb"
+  "CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.o"
+  "CMakeFiles/SearchEngine.dir/ConverterJSON.cpp.o.d"
+  "CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.o"
+  "CMakeFiles/SearchEngine.dir/InvertedIndex.cpp.o.d"
+  "CMakeFiles/SearchEngine.dir/SearchEngine.cpp.o"
+  "CMakeFiles/SearchEngine.dir/SearchEngine.cpp.o.d"
+  "CMakeFiles/SearchEngine.dir/main.cpp.o"
+  "CMakeFiles/SearchEngine.dir/main.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

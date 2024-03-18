@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'")
+       file='/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'")
 
-  file("" "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip" actual_value)
+  file("" "/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS " hash of
-    C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip
+    /Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip
   does not match expected value
     expected: ''
       actual: '${actual_value}'")
@@ -71,51 +71,43 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip" STREQUAL "")
-  message(FATAL_ERROR "LOCAL can't be empty")
-endif()
-
-if("https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip" STREQUAL "")
-  message(FATAL_ERROR "REMOTE can't be empty")
-endif()
-
-if(EXISTS "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
+if(EXISTS "/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'
+  file='/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'
   =''"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
+      file(REMOVE "/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'
+  file='/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
+    file(REMOVE "/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'
+   dst='/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip'
    timeout='none'
    inactivity timeout='none'"
 )
-set(download_retry_codes 7 6 8 15)
+set(download_retry_codes 7 6 8 15 28)
 set(skip_url_list)
 set(status_code)
 foreach(i RANGE ${retry_number})
   if(status_code IN_LIST download_retry_codes)
     sleep_before_download(${i})
   endif()
-  foreach(url https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip)
+  foreach(url IN ITEMS [====[https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip]====])
     if(NOT url IN_LIST skip_url_list)
       message(STATUS "Using src='${url}'")
 
@@ -126,7 +118,7 @@ foreach(i RANGE ${retry_number})
 
       file(
         DOWNLOAD
-        "${url}" "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip"
+        "${url}" "/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip"
         SHOW_PROGRESS
         # no TIMEOUT
         # no INACTIVITY_TIMEOUT
@@ -143,7 +135,7 @@ foreach(i RANGE ${retry_number})
         check_file_hash(has_hash hash_is_good)
         if(has_hash AND NOT hash_is_good)
           message(STATUS "Hash mismatch, removing...")
-          file(REMOVE "C:/Users/HP/OneDrive/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
+          file(REMOVE "/Users/user/Documents/GitHub/Search_Engine_4/build/_deps/googletest-subbuild/googletest-populate-prefix/src/v1.14.0.zip")
         else()
           message(STATUS "Downloading... done")
           return()

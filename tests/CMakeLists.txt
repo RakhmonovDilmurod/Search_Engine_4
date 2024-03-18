@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.8)
 
 set(MY_SOURCE_DIR ${CMAKE_SOURCE_DIR}/src)
 
